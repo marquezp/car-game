@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu13e2iqguwya"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vggx5"]
-
-[node name="Wheel" type="RigidBody2D" groups=["wheel"]]
-gravity_scale = 2.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_vggx5")
