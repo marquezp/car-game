@@ -1,0 +1,122 @@
+[gd_scene load_steps=19 format=3 uid="uid://cxie5le7qqpdg"]
+
+[ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://car.tscn" id="1_uuuga"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape.gd" id="2_h4xjj"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="3_6jkvj"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="3_ahska"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="4_lj8pb"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="4_ohyfi"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="5_yxyc3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl807"]
+size = Vector2(1175, 75.5)
+
+[sub_resource type="Resource" id="Resource_e5rdh"]
+script = ExtResource("3_6jkvj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_rbogt"]
+script = ExtResource("4_lj8pb")
+position = Vector2(-261.594, 45.4946)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_e5rdh")
+
+[sub_resource type="Resource" id="Resource_plxej"]
+script = ExtResource("3_6jkvj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_lbyby"]
+script = ExtResource("4_lj8pb")
+position = Vector2(128.901, -117.528)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_plxej")
+
+[sub_resource type="Resource" id="Resource_7j3ue"]
+script = ExtResource("3_6jkvj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_2q6kw"]
+script = ExtResource("4_lj8pb")
+position = Vector2(130.165, 35.3846)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_7j3ue")
+
+[sub_resource type="Resource" id="Resource_gcase"]
+script = ExtResource("3_6jkvj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_216uj"]
+script = ExtResource("4_lj8pb")
+position = Vector2(-261.594, 45.4946)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_gcase")
+
+[sub_resource type="Resource" id="Resource_asu6i"]
+script = ExtResource("3_ahska")
+_points = {
+0: SubResource("Resource_rbogt"),
+1: SubResource("Resource_lbyby"),
+2: SubResource("Resource_2q6kw"),
+3: SubResource("Resource_216uj")
+}
+_point_order = PackedInt32Array(0, 1, 2, 3)
+_constraints = {
+Vector2i(0, 3): 15
+}
+_next_key = 4
+_material_overrides = {}
+tessellation_stages = 3
+tessellation_tolerance = 6.0
+curve_bake_interval = 20.0
+
+[sub_resource type="Resource" id="Resource_rahly"]
+script = ExtResource("5_yxyc3")
+_edge_meta_materials = Array[ExtResource("4_ohyfi")]([])
+fill_textures = Array[Texture2D]([])
+fill_texture_z_index = -10
+fill_texture_show_behind_parent = false
+fill_texture_scale = 1.0
+fill_texture_absolute_position = false
+fill_texture_absolute_rotation = false
+fill_texture_offset = Vector2(0, 0)
+fill_texture_angle_offset = 0.0
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[node name="Game" type="Node"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(561, 587)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_xl807")
+
+[node name="Car" parent="." instance=ExtResource("1_uuuga")]
+position = Vector2(154, 383)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(814, 557)
+
+[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D2"]
+position = Vector2(60.6594, -50.5495)
+script = ExtResource("2_h4xjj")
+_points = SubResource("Resource_asu6i")
+shape_material = SubResource("Resource_rahly")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(-200.934, -5.05493, 189.561, -168.077, 190.824, -15.1649, -200.934, -5.05493)
