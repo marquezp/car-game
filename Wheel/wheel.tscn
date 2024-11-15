@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu13e2iqguwya"]
+
+[ext_resource type="Texture2D" uid="uid://cyalehwtkj3qw" path="res://Assets/car_beta_tire.png" id="1_bo7ji"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vggx5"]
+
+[node name="Wheel" type="RigidBody2D" groups=["wheel"]]
+gravity_scale = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.0433355, 0.0433355)
+texture = ExtResource("1_bo7ji")
+offset = Vector2(1370.96, -826.168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vggx5")

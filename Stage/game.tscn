@@ -1,70 +1,70 @@
 [gd_scene load_steps=19 format=3 uid="uid://cxie5le7qqpdg"]
 
-[ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://car.tscn" id="1_uuuga"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape.gd" id="2_h4xjj"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="3_6jkvj"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="3_ahska"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="4_lj8pb"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="4_ohyfi"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="5_yxyc3"]
+[ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="1_tosj2"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape.gd" id="2_jwtaw"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="3_pclng"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="4_1clk3"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="5_kg1je"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="6_yg0kl"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_l7irc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xl807"]
 size = Vector2(1175, 75.5)
 
-[sub_resource type="Resource" id="Resource_e5rdh"]
-script = ExtResource("3_6jkvj")
+[sub_resource type="Resource" id="Resource_w84ax"]
+script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_rbogt"]
-script = ExtResource("4_lj8pb")
+script = ExtResource("4_1clk3")
 position = Vector2(-261.594, 45.4946)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_e5rdh")
+properties = SubResource("Resource_w84ax")
 
-[sub_resource type="Resource" id="Resource_plxej"]
-script = ExtResource("3_6jkvj")
+[sub_resource type="Resource" id="Resource_ydl5j"]
+script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_lbyby"]
-script = ExtResource("4_lj8pb")
+script = ExtResource("4_1clk3")
 position = Vector2(128.901, -117.528)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_plxej")
+properties = SubResource("Resource_ydl5j")
 
-[sub_resource type="Resource" id="Resource_7j3ue"]
-script = ExtResource("3_6jkvj")
+[sub_resource type="Resource" id="Resource_uc5ye"]
+script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_2q6kw"]
-script = ExtResource("4_lj8pb")
+script = ExtResource("4_1clk3")
 position = Vector2(130.165, 35.3846)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_7j3ue")
+properties = SubResource("Resource_uc5ye")
 
-[sub_resource type="Resource" id="Resource_gcase"]
-script = ExtResource("3_6jkvj")
+[sub_resource type="Resource" id="Resource_lobvl"]
+script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_216uj"]
-script = ExtResource("4_lj8pb")
+script = ExtResource("4_1clk3")
 position = Vector2(-261.594, 45.4946)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_gcase")
+properties = SubResource("Resource_lobvl")
 
 [sub_resource type="Resource" id="Resource_asu6i"]
-script = ExtResource("3_ahska")
+script = ExtResource("5_kg1je")
 _points = {
 0: SubResource("Resource_rbogt"),
 1: SubResource("Resource_lbyby"),
@@ -82,8 +82,8 @@ tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
 [sub_resource type="Resource" id="Resource_rahly"]
-script = ExtResource("5_yxyc3")
-_edge_meta_materials = Array[ExtResource("4_ohyfi")]([])
+script = ExtResource("7_l7irc")
+_edge_meta_materials = Array[ExtResource("6_yg0kl")]([])
 fill_textures = Array[Texture2D]([])
 fill_texture_z_index = -10
 fill_texture_show_behind_parent = false
@@ -104,7 +104,7 @@ position = Vector2(561, 587)
 position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_xl807")
 
-[node name="Car" parent="." instance=ExtResource("1_uuuga")]
+[node name="Car" parent="." instance=ExtResource("1_tosj2")]
 position = Vector2(154, 383)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -112,11 +112,11 @@ position = Vector2(814, 557)
 
 [node name="SS2D_Shape" type="Node2D" parent="StaticBody2D2"]
 position = Vector2(60.6594, -50.5495)
-script = ExtResource("2_h4xjj")
+script = ExtResource("2_jwtaw")
 _points = SubResource("Resource_asu6i")
 shape_material = SubResource("Resource_rahly")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-200.934, -5.05493, 189.561, -168.077, 190.824, -15.1649, -200.934, -5.05493)
+polygon = PackedVector2Array(-200.935, -5.0549, 189.56, -168.077, 190.824, -15.1649, -200.935, -5.0549)
