@@ -12,7 +12,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xl807"]
 size = Vector2(1175, 75.5)
 
+<<<<<<< HEAD
 [sub_resource type="Resource" id="Resource_fm172"]
+=======
+[sub_resource type="Resource" id="Resource_el0p8"]
+>>>>>>> 2ec8712cc3a9073eb869edf1fe4a279215d80b48
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -23,9 +27,15 @@ script = ExtResource("4_1clk3")
 position = Vector2(-261.594, 45.4946)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
+<<<<<<< HEAD
 properties = SubResource("Resource_fm172")
 
 [sub_resource type="Resource" id="Resource_u2rqd"]
+=======
+properties = SubResource("Resource_el0p8")
+
+[sub_resource type="Resource" id="Resource_6ibdy"]
+>>>>>>> 2ec8712cc3a9073eb869edf1fe4a279215d80b48
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -36,9 +46,15 @@ script = ExtResource("4_1clk3")
 position = Vector2(128.901, -117.528)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
+<<<<<<< HEAD
 properties = SubResource("Resource_u2rqd")
 
 [sub_resource type="Resource" id="Resource_a2ojh"]
+=======
+properties = SubResource("Resource_6ibdy")
+
+[sub_resource type="Resource" id="Resource_wdiq0"]
+>>>>>>> 2ec8712cc3a9073eb869edf1fe4a279215d80b48
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -49,9 +65,15 @@ script = ExtResource("4_1clk3")
 position = Vector2(130.165, 35.3846)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
+<<<<<<< HEAD
 properties = SubResource("Resource_a2ojh")
 
 [sub_resource type="Resource" id="Resource_0ascc"]
+=======
+properties = SubResource("Resource_wdiq0")
+
+[sub_resource type="Resource" id="Resource_fyexw"]
+>>>>>>> 2ec8712cc3a9073eb869edf1fe4a279215d80b48
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -62,7 +84,11 @@ script = ExtResource("4_1clk3")
 position = Vector2(-261.594, 45.4946)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
+<<<<<<< HEAD
 properties = SubResource("Resource_0ascc")
+=======
+properties = SubResource("Resource_fyexw")
+>>>>>>> 2ec8712cc3a9073eb869edf1fe4a279215d80b48
 
 [sub_resource type="Resource" id="Resource_asu6i"]
 script = ExtResource("5_kg1je")
