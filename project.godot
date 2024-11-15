@@ -10,7 +10,6 @@ config_version=5
 
 [application]
 
-
 config/name="car-game"
 run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
