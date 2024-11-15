@@ -10,13 +10,9 @@ config_version=5
 
 [application]
 
-<<<<<<< HEAD
+
 config/name="car-game"
 run/main_scene="res://game.tscn"
-=======
-config/name="New Game Project"
-run/main_scene="res://Stage/game.tscn"
->>>>>>> 50dcc8d9906b69fa1681493d21ff5d3d8add241c
 config/features=PackedStringArray("4.3", "Mobile")
 
 [editor_plugins]
