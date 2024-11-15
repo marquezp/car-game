@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv70fssniyws5"]
+[gd_scene load_steps=4 format=3 uid="uid://cv70fssniyws5"]
 
 [ext_resource type="Script" path="res://Car/car.gd" id="1_k1ttg"]
 [ext_resource type="Texture2D" uid="uid://b2f68efbdbgqc" path="res://Assets/car_beta.png" id="2_gpuoq"]
 [ext_resource type="PackedScene" uid="uid://cu13e2iqguwya" path="res://Wheel/wheel.tscn" id="3_hla4v"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_87kex"]
-size = Vector2(109, 47)
 
 [node name="Car" type="RigidBody2D"]
 gravity_scale = 2.0
@@ -16,9 +13,9 @@ position = Vector2(15, 7.27148)
 scale = Vector2(-0.037, 0.038)
 texture = ExtResource("2_gpuoq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(19, -6)
-shape = SubResource("RectangleShape2D_87kex")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(5, 1)
+polygon = PackedVector2Array(-31, 17, -34, 14, -43, 14, -43, 4, -19, -13, 9, -13, 31, -5, 63, 6, 66, 9, 66, 16, 52, 16, 49, 7, 41, 4, 34, 6, 29, 12, 10, 12, 2, 12, -9, 12, -14, 6, -20, 4, -27, 6, -31, 12)
 
 [node name="WheelHolder" type="PinJoint2D" parent="."]
 position = Vector2(-15, 17)
@@ -35,3 +32,16 @@ node_b = NodePath("Wheel")
 softness = 1.0
 
 [node name="Wheel" parent="WheelHolder2" instance=ExtResource("3_hla4v")]
+
+[node name="ChargeUpLabel" type="Label" parent="."]
+offset_left = -34.0
+offset_top = -60.0
+offset_right = 18.0
+offset_bottom = -37.0
+text = "Speed:"
+
+[node name="LinearVelocityLabel" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -37.0
+offset_right = 8.0
+offset_bottom = -14.0

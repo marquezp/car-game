@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu13e2iqguwya"]
+[gd_scene load_steps=4 format=3 uid="uid://cu13e2iqguwya"]
 
 [ext_resource type="Texture2D" uid="uid://cyalehwtkj3qw" path="res://Assets/car_beta_tire.png" id="1_bo7ji"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mvivu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vggx5"]
 
 [node name="Wheel" type="RigidBody2D" groups=["wheel"]]
+physics_material_override = SubResource("PhysicsMaterial_mvivu")
 gravity_scale = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://cxie5le7qqpdg"]
+[gd_scene load_steps=20 format=3 uid="uid://cxie5le7qqpdg"]
 
+[ext_resource type="PackedScene" uid="uid://bun32233l0ftl" path="res://Stage/carpet.tscn" id="1_6vxmh"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="1_tosj2"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape.gd" id="2_jwtaw"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="3_pclng"]
@@ -11,7 +12,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xl807"]
 size = Vector2(1175, 75.5)
 
-[sub_resource type="Resource" id="Resource_w84ax"]
+[sub_resource type="Resource" id="Resource_fm172"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -22,9 +23,9 @@ script = ExtResource("4_1clk3")
 position = Vector2(-261.594, 45.4946)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_w84ax")
+properties = SubResource("Resource_fm172")
 
-[sub_resource type="Resource" id="Resource_ydl5j"]
+[sub_resource type="Resource" id="Resource_u2rqd"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -35,9 +36,9 @@ script = ExtResource("4_1clk3")
 position = Vector2(128.901, -117.528)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_ydl5j")
+properties = SubResource("Resource_u2rqd")
 
-[sub_resource type="Resource" id="Resource_uc5ye"]
+[sub_resource type="Resource" id="Resource_a2ojh"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -48,9 +49,9 @@ script = ExtResource("4_1clk3")
 position = Vector2(130.165, 35.3846)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_uc5ye")
+properties = SubResource("Resource_a2ojh")
 
-[sub_resource type="Resource" id="Resource_lobvl"]
+[sub_resource type="Resource" id="Resource_0ascc"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -61,7 +62,7 @@ script = ExtResource("4_1clk3")
 position = Vector2(-261.594, 45.4946)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_lobvl")
+properties = SubResource("Resource_0ascc")
 
 [sub_resource type="Resource" id="Resource_asu6i"]
 script = ExtResource("5_kg1je")
@@ -97,26 +98,38 @@ render_offset = 0.0
 
 [node name="Game" type="Node"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Carpet" parent="." instance=ExtResource("1_6vxmh")]
+position = Vector2(401, 486)
+scale = Vector2(4.72, 6.68)
+
+[node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(561, 587)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_xl807")
 
 [node name="Car" parent="." instance=ExtResource("1_tosj2")]
-position = Vector2(154, 383)
+position = Vector2(110, 526)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="Ramp" type="StaticBody2D" parent="."]
 position = Vector2(814, 557)
 
-[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D2"]
+[node name="SS2D_Shape" type="Node2D" parent="Ramp"]
 position = Vector2(60.6594, -50.5495)
 script = ExtResource("2_jwtaw")
 _points = SubResource("Resource_asu6i")
 shape_material = SubResource("Resource_rahly")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramp"]
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(-200.935, -5.0549, 189.56, -168.077, 190.824, -15.1649, -200.935, -5.0549)
+
+[node name="LWall" type="StaticBody2D" parent="."]
+position = Vector2(-4, 242)
+scale = Vector2(0.0399976, 7.68)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LWall"]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_xl807")
