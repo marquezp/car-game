@@ -6,6 +6,7 @@
 
 [node name="Car" type="RigidBody2D"]
 gravity_scale = 2.0
+linear_velocity = Vector2(-2000, 0)
 script = ExtResource("1_k1ttg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

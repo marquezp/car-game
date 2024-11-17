@@ -110,7 +110,8 @@ position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_xl807")
 
 [node name="Car" parent="." instance=ExtResource("1_tosj2")]
-position = Vector2(110, 526)
+position = Vector2(190, 519)
+linear_velocity = Vector2(0, 0)
 
 [node name="Ramp" type="StaticBody2D" parent="."]
 position = Vector2(814, 557)
