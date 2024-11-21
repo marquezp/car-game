@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cio68jgohdv5f"]
+
+[ext_resource type="Texture2D" uid="uid://bdto13wmljyvy" path="res://Assets/background.png" id="1_ilkhr"]
+[ext_resource type="Texture2D" uid="uid://q5plg1t14t7w" path="res://Assets/floor.png" id="2_mhi82"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Wall" type="Sprite2D" parent="."]
+scale = Vector2(0.292742, 0.292742)
+texture = ExtResource("1_ilkhr")
+centered = false
+
+[node name="Floor" type="Sprite2D" parent="."]
+position = Vector2(512, 296)
+scale = Vector2(0.293, 0.42)
+texture = ExtResource("2_mhi82")

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv70fssniyws5"]
+[gd_scene load_steps=5 format=3 uid="uid://cv70fssniyws5"]
 
 [ext_resource type="Script" path="res://Car/car.gd" id="1_k1ttg"]
 [ext_resource type="Texture2D" uid="uid://b2f68efbdbgqc" path="res://Assets/car_beta.png" id="2_gpuoq"]
 [ext_resource type="PackedScene" uid="uid://cu13e2iqguwya" path="res://Wheel/wheel.tscn" id="3_hla4v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cct7o"]
+size = Vector2(36, 23)
 
 [node name="Car" type="RigidBody2D"]
 gravity_scale = 2.0
@@ -34,7 +37,7 @@ softness = 1.0
 
 [node name="Wheel" parent="WheelHolder2" instance=ExtResource("3_hla4v")]
 
-[node name="ChargeUpLabel" type="Label" parent="."]
+[node name="DistanceLabel" type="Label" parent="."]
 offset_left = -34.0
 offset_top = -60.0
 offset_right = 18.0
@@ -46,3 +49,11 @@ offset_left = -32.0
 offset_top = -37.0
 offset_right = 8.0
 offset_bottom = -14.0
+
+[node name="ClickBox" type="Area2D" parent="."]
+position = Vector2(13, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickBox"]
+shape = SubResource("RectangleShape2D_cct7o")
+
+[connection signal="input_event" from="ClickBox" to="." method="_on_click_box_input_event"]
