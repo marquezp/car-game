@@ -1,10 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu13e2iqguwya"]
+[gd_scene load_steps=7 format=3 uid="uid://cu13e2iqguwya"]
 
 [ext_resource type="Texture2D" uid="uid://cyalehwtkj3qw" path="res://Assets/car_beta_tire.png" id="1_bo7ji"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mvivu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vggx5"]
+
+[sub_resource type="Animation" id="Animation_i2thg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ouryq"]
+resource_name = "charge_up"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i1paa"]
+_data = {
+"RESET": SubResource("Animation_i2thg"),
+"charge_up": SubResource("Animation_ouryq")
+}
 
 [node name="Wheel" type="RigidBody2D" groups=["wheel"]]
 physics_material_override = SubResource("PhysicsMaterial_mvivu")
@@ -18,3 +55,8 @@ offset = Vector2(1370.96, -826.168)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vggx5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i1paa")
+}

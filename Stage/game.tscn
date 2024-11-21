@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cxie5le7qqpdg"]
+[gd_scene load_steps=21 format=3 uid="uid://cxie5le7qqpdg"]
 
 [ext_resource type="PackedScene" uid="uid://bun32233l0ftl" path="res://Stage/carpet.tscn" id="1_6vxmh"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="1_tosj2"]
@@ -8,11 +8,12 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="5_kg1je"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="6_yg0kl"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_l7irc"]
+[ext_resource type="PackedScene" uid="uid://cio68jgohdv5f" path="res://Stage/background.tscn" id="9_x6kiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xl807"]
 size = Vector2(1175, 75.5)
 
-[sub_resource type="Resource" id="Resource_0mgeo"]
+[sub_resource type="Resource" id="Resource_gmtmd"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -23,9 +24,9 @@ script = ExtResource("4_1clk3")
 position = Vector2(-261.594, 45.4946)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_0mgeo")
+properties = SubResource("Resource_gmtmd")
 
-[sub_resource type="Resource" id="Resource_0dggc"]
+[sub_resource type="Resource" id="Resource_apoip"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -36,9 +37,9 @@ script = ExtResource("4_1clk3")
 position = Vector2(128.901, -117.528)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_0dggc")
+properties = SubResource("Resource_apoip")
 
-[sub_resource type="Resource" id="Resource_erp02"]
+[sub_resource type="Resource" id="Resource_cmam7"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -49,9 +50,9 @@ script = ExtResource("4_1clk3")
 position = Vector2(130.165, 35.3846)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_erp02")
+properties = SubResource("Resource_cmam7")
 
-[sub_resource type="Resource" id="Resource_yqyk4"]
+[sub_resource type="Resource" id="Resource_4reuh"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -62,7 +63,7 @@ script = ExtResource("4_1clk3")
 position = Vector2(-261.594, 45.4946)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_yqyk4")
+properties = SubResource("Resource_4reuh")
 
 [sub_resource type="Resource" id="Resource_asu6i"]
 script = ExtResource("5_kg1je")
@@ -98,22 +99,26 @@ render_offset = 0.0
 
 [node name="Game" type="Node"]
 
+[node name="Background" parent="." instance=ExtResource("9_x6kiy")]
+
 [node name="Carpet" parent="." instance=ExtResource("1_6vxmh")]
-position = Vector2(401, 486)
+position = Vector2(530, 469)
 scale = Vector2(4.72, 6.68)
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(561, 587)
+position = Vector2(588, 571)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_xl807")
 
 [node name="Car" parent="." instance=ExtResource("1_tosj2")]
-position = Vector2(110, 526)
+position = Vector2(175, 402)
+linear_velocity = Vector2(0, 0)
 
 [node name="Ramp" type="StaticBody2D" parent="."]
-position = Vector2(814, 557)
+position = Vector2(945, 547)
+rotation = 0.0290625
 
 [node name="SS2D_Shape" type="Node2D" parent="Ramp"]
 position = Vector2(60.6594, -50.5495)
@@ -124,10 +129,10 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramp"]
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-200.935, -5.0549, 189.56, -168.077, 190.824, -15.1649, -200.935, -5.0549)
+polygon = PackedVector2Array(-200.935, -5.05487, 189.56, -168.077, 190.824, -15.1649, -200.935, -5.05487)
 
 [node name="LWall" type="StaticBody2D" parent="."]
-position = Vector2(-4, 242)
+position = Vector2(-22, 240)
 scale = Vector2(0.0399976, 7.68)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LWall"]
