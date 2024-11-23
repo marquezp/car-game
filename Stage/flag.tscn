@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqk6ncb0jc4y3"]
+
+[ext_resource type="Texture2D" uid="uid://celr5e12h6436" path="res://Assets/pngegg.png" id="1_0djre"]
+[ext_resource type="Script" path="res://Stage/flag.gd" id="1_8nebc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwjmn"]
+size = Vector2(11, 20)
+
+[node name="Carpet" type="Area2D"]
+script = ExtResource("1_8nebc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_mwjmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, -10)
+scale = Vector2(0.0384311, 0.0384311)
+texture = ExtResource("1_0djre")
