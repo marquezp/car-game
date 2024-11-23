@@ -13,7 +13,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xl807"]
 size = Vector2(1175, 75.5)
 
-[sub_resource type="Resource" id="Resource_gmtmd"]
+[sub_resource type="Resource" id="Resource_0dy3h"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -24,9 +24,9 @@ script = ExtResource("4_1clk3")
 position = Vector2(-261.594, 45.4946)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_gmtmd")
+properties = SubResource("Resource_0dy3h")
 
-[sub_resource type="Resource" id="Resource_apoip"]
+[sub_resource type="Resource" id="Resource_2hxha"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -37,9 +37,9 @@ script = ExtResource("4_1clk3")
 position = Vector2(128.901, -117.528)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_apoip")
+properties = SubResource("Resource_2hxha")
 
-[sub_resource type="Resource" id="Resource_cmam7"]
+[sub_resource type="Resource" id="Resource_6hx1w"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -50,9 +50,9 @@ script = ExtResource("4_1clk3")
 position = Vector2(130.165, 35.3846)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_cmam7")
+properties = SubResource("Resource_6hx1w")
 
-[sub_resource type="Resource" id="Resource_4reuh"]
+[sub_resource type="Resource" id="Resource_xadeu"]
 script = ExtResource("3_pclng")
 texture_idx = 0
 flip = false
@@ -63,7 +63,7 @@ script = ExtResource("4_1clk3")
 position = Vector2(-261.594, 45.4946)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_4reuh")
+properties = SubResource("Resource_xadeu")
 
 [sub_resource type="Resource" id="Resource_asu6i"]
 script = ExtResource("5_kg1je")
@@ -129,7 +129,7 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramp"]
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-200.935, -5.05487, 189.56, -168.077, 190.824, -15.1649, -200.935, -5.05487)
+polygon = PackedVector2Array(-200.935, -5.0549, 189.56, -168.077, 190.824, -15.1649, -200.935, -5.0549)
 
 [node name="LWall" type="StaticBody2D" parent="."]
 position = Vector2(-22, 240)
