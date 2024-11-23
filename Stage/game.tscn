@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://cxie5le7qqpdg"]
+[gd_scene load_steps=23 format=3 uid="uid://cxie5le7qqpdg"]
 
 [ext_resource type="PackedScene" uid="uid://bun32233l0ftl" path="res://Stage/carpet.tscn" id="1_6vxmh"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="1_tosj2"]
+[ext_resource type="Script" path="res://game.gd" id="1_u52fw"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape.gd" id="2_jwtaw"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="3_pclng"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="4_1clk3"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="6_yg0kl"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_l7irc"]
 [ext_resource type="PackedScene" uid="uid://cio68jgohdv5f" path="res://Stage/background.tscn" id="9_x6kiy"]
+[ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Stage/flag.tscn" id="10_trdts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xl807"]
 size = Vector2(1175, 75.5)
@@ -98,6 +100,7 @@ fill_mesh_offset = 0.0
 render_offset = 0.0
 
 [node name="Game" type="Node"]
+script = ExtResource("1_u52fw")
 
 [node name="Background" parent="." instance=ExtResource("9_x6kiy")]
 
@@ -138,3 +141,7 @@ scale = Vector2(0.0399976, 7.68)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LWall"]
 position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_xl807")
+
+[node name="Flag" parent="." instance=ExtResource("10_trdts")]
+position = Vector2(874, 411)
+scale = Vector2(6.72, 6.72)

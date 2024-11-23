@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Stage/carpet.gd" id="1_fkrdo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwjmn"]
+size = Vector2(11, 20)
 
 [node name="Carpet" type="Area2D"]
 script = ExtResource("1_fkrdo")

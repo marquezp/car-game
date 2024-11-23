@@ -12,7 +12,9 @@ var wheels = []
 var previous_position: Vector2
 var distance_traveled: float = 0.0
 
-
+func stage_over():
+	get_tree().reload_current_scene()
+	
 func start_slowing_down(rate):
 	damping_factor = rate
 	is_slowing_down = true
