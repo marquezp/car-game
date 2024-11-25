@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cusdvax13dgwc"]
+
+[ext_resource type="Texture2D" uid="uid://bdto13wmljyvy" path="res://Assets/background.png" id="1_scnnf"]
+[ext_resource type="Texture2D" uid="uid://q5plg1t14t7w" path="res://Assets/floor.png" id="2_u1m5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07t6k"]
+size = Vector2(3494.88, 152.381)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdbni"]
+size = Vector2(1175, 75.5)
+
+[node name="LevelTemplate" type="Node2D"]
+
+[node name="WallPaper" type="Sprite2D" parent="."]
+scale = Vector2(0.292742, 0.292742)
+texture = ExtResource("1_scnnf")
+centered = false
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(684.284, 535.82)
+scale = Vector2(0.293, 0.42)
+
+[node name="FloorSprite" type="Sprite2D" parent="Floor"]
+position = Vector2(-588, -571)
+texture = ExtResource("2_u1m5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-588, 76.619)
+shape = SubResource("RectangleShape2D_07t6k")
+
+[node name="LWall" type="StaticBody2D" parent="."]
+position = Vector2(-22, 240)
+scale = Vector2(0.0399976, 7.68)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LWall"]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_bdbni")

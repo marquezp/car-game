@@ -4,16 +4,16 @@
 [ext_resource type="Script" path="res://Stage/flag.gd" id="1_8nebc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwjmn"]
-size = Vector2(11, 20)
+size = Vector2(27, 72.5)
 
-[node name="Carpet" type="Area2D"]
+[node name="Flag" type="Area2D"]
 script = ExtResource("1_8nebc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
+position = Vector2(0, 18.25)
 shape = SubResource("RectangleShape2D_mwjmn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9, -10)
-scale = Vector2(0.0384311, 0.0384311)
+position = Vector2(-27, -8)
+scale = Vector2(-0.118, 0.118)
 texture = ExtResource("1_0djre")

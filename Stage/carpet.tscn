@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bun32233l0ftl"]
+[gd_scene load_steps=4 format=3 uid="uid://bun32233l0ftl"]
 
 [ext_resource type="Script" path="res://Stage/carpet.gd" id="1_fkrdo"]
+[ext_resource type="Texture2D" uid="uid://c7ty1pvh53krt" path="res://Assets/gray-carpet-texture.jpg" id="2_csx45"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwjmn"]
-size = Vector2(11, 20)
+size = Vector2(16, 16)
 
 [node name="Carpet" type="Area2D"]
 script = ExtResource("1_fkrdo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Gray-carpet-texture" type="Sprite2D" parent="."]
+scale = Vector2(0.00484848, 0.00484848)
+texture = ExtResource("2_csx45")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mwjmn")

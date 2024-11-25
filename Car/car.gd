@@ -71,6 +71,5 @@ func _physics_process(delta: float) -> void:
 			
 	# Display debug info
 	distance_label.text = "Distance Traveled: " + str(int(distance_traveled))
-	linear_velocity_label.text = "Linear Vel: " + str(car.linear_velocity.x)
 	
 	

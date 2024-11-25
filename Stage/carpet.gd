@@ -1,7 +1,7 @@
 extends Area2D
 
 # TODO mess around with this factor when playtesting
-@export var damping_factor: float = 0.9
+@export var damping_factor: float = 0.7
 
 func _ready():
 	connect("body_entered", self._on_body_entered)

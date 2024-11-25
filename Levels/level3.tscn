@@ -1,0 +1,133 @@
+[gd_scene load_steps=20 format=3 uid="uid://eybshl5aijmx"]
+
+[ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Levels/level_template.tscn" id="1_dompn"]
+[ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Stage/flag.tscn" id="2_vow2u"]
+[ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="3_4cr4c"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape.gd" id="4_0qehq"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="5_fp7ys"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="6_8tp8d"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="7_gm8n6"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_b41s2"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_quf80"]
+
+[sub_resource type="Resource" id="Resource_ovu6b"]
+script = ExtResource("5_fp7ys")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_xkex8"]
+script = ExtResource("6_8tp8d")
+position = Vector2(-97.3799, 35.3445)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_ovu6b")
+
+[sub_resource type="Resource" id="Resource_0s3s8"]
+script = ExtResource("5_fp7ys")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_lq5qg"]
+script = ExtResource("6_8tp8d")
+position = Vector2(48.0078, -58.1924)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_0s3s8")
+
+[sub_resource type="Resource" id="Resource_3772a"]
+script = ExtResource("5_fp7ys")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_826pg"]
+script = ExtResource("6_8tp8d")
+position = Vector2(45.6293, 33.3765)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_3772a")
+
+[sub_resource type="Resource" id="Resource_vtr3d"]
+script = ExtResource("5_fp7ys")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_73yqo"]
+script = ExtResource("6_8tp8d")
+position = Vector2(-97.3799, 35.3445)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_vtr3d")
+
+[sub_resource type="Resource" id="Resource_4x7bt"]
+script = ExtResource("7_gm8n6")
+_points = {
+0: SubResource("Resource_xkex8"),
+1: SubResource("Resource_lq5qg"),
+2: SubResource("Resource_826pg"),
+3: SubResource("Resource_73yqo")
+}
+_point_order = PackedInt32Array(0, 1, 2, 3)
+_constraints = {
+Vector2i(0, 3): 15
+}
+_next_key = 4
+_material_overrides = {}
+tessellation_stages = 3
+tessellation_tolerance = 6.0
+curve_bake_interval = 20.0
+
+[sub_resource type="Resource" id="Resource_vc8ro"]
+script = ExtResource("9_quf80")
+_edge_meta_materials = Array[ExtResource("8_b41s2")]([])
+fill_textures = Array[Texture2D]([])
+fill_texture_z_index = -10
+fill_texture_show_behind_parent = false
+fill_texture_scale = 1.0
+fill_texture_absolute_position = false
+fill_texture_absolute_rotation = false
+fill_texture_offset = Vector2(0, 0)
+fill_texture_angle_offset = 0.0
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[node name="Level3" type="Node2D"]
+
+[node name="LevelTemplate" parent="." instance=ExtResource("1_dompn")]
+
+[node name="Flag" parent="." instance=ExtResource("2_vow2u")]
+position = Vector2(984, 480)
+
+[node name="Car" parent="." instance=ExtResource("3_4cr4c")]
+position = Vector2(120, 506)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(473, 499)
+
+[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D"]
+script = ExtResource("4_0qehq")
+_points = SubResource("Resource_4x7bt")
+shape_material = SubResource("Resource_vc8ro")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(-97.3799, 35.3445, 48.0078, -58.1924, 45.6293, 33.3765, -97.3799, 35.3445)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(669, 500)
+rotation = -0.0156288
+scale = Vector2(-1.04413, 1)
+
+[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D2"]
+script = ExtResource("4_0qehq")
+_points = SubResource("Resource_4x7bt")
+shape_material = SubResource("Resource_vc8ro")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(-97.38, 35.3445, 48.0078, -58.1925, 45.6293, 33.3765, -97.38, 35.3445)

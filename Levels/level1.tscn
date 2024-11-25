@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1mtjldt2ttw6"]
+
+[ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Levels/level_template.tscn" id="1_jdhaj"]
+[ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="2_8ia72"]
+[ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Stage/flag.tscn" id="3_31cmc"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="LevelTemplate" parent="." instance=ExtResource("1_jdhaj")]
+
+[node name="Car" parent="." instance=ExtResource("2_8ia72")]
+position = Vector2(152, 505)
+
+[node name="Flag" parent="." instance=ExtResource("3_31cmc")]
+position = Vector2(985, 481)
