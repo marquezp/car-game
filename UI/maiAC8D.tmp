@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5mxcamdvpfl3"]
+
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_32lnu"]
+[ext_resource type="Texture2D" uid="uid://bdto13wmljyvy" path="res://Assets/background.png" id="1_dbx3c"]
+[ext_resource type="Texture2D" uid="uid://q5plg1t14t7w" path="res://Assets/floor.png" id="2_1fuk6"]
+
+[sub_resource type="SystemFont" id="SystemFont_f1fcp"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_74axf"]
+font_names = PackedStringArray("Impact")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_32lnu")
+
+[node name="Wall" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -300.0
+offset_right = 2996.0
+offset_bottom = 2180.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.293, 0.293)
+texture = ExtResource("1_dbx3c")
+
+[node name="Floor" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -223.0
+offset_right = 3507.0
+offset_bottom = 2257.0
+scale = Vector2(0.293, 0.42)
+texture = ExtResource("2_1fuk6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_f1fcp")
+theme_override_font_sizes/font_size = 64
+text = "GAME TITLE
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_74axf")
+theme_override_font_sizes/font_size = 24
+text = "Start Game
+"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_74axf")
+theme_override_font_sizes/font_size = 24
+text = "Exit Game
+"

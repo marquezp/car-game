@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="car-game"
-run/main_scene="res://Levels/level1.tscn"
+run/main_scene="res://UI/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
+
+[autoload]
+
+GameData="*res://game_data.tscn"
 
 [display]
 

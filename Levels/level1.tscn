@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Levels/level_template.tscn" id="1_jdhaj"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="2_8ia72"]
-[ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Stage/flag.tscn" id="3_31cmc"]
+[ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="3_31cmc"]
 
 [node name="Level1" type="Node2D"]
 
