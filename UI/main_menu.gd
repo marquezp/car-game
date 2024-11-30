@@ -4,7 +4,7 @@ extends Control
 @onready var start_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/StartButton
 @onready var exit_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/ExitButton
 
-@onready var start_level_scene: PackedScene = preload("res://Levels/level1.tscn")
+@onready var start_level_path = "res://Levels/level1.tscn"
 
 
 func _ready():
@@ -12,7 +12,7 @@ func _ready():
 	exit_button.button_down.connect(on_exit_pressed)
 	
 func on_start_pressed():
-	get_tree().change_scene_to_packed(start_level_scene)
+	GameData.change_level(start_level_path)
 	
 func on_exit_pressed():
-	get_tree().quit()
+	GameData.end_game()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cusdvax13dgwc"]
+[gd_scene load_steps=6 format=3 uid="uid://cusdvax13dgwc"]
 
 [ext_resource type="Texture2D" uid="uid://bdto13wmljyvy" path="res://Assets/background.png" id="1_scnnf"]
 [ext_resource type="Texture2D" uid="uid://q5plg1t14t7w" path="res://Assets/floor.png" id="2_u1m5q"]
+[ext_resource type="PackedScene" uid="uid://g510h064yyuf" path="res://UI/level_ui.tscn" id="3_ea8l3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07t6k"]
 size = Vector2(3494.88, 152.381)
@@ -35,3 +36,7 @@ scale = Vector2(0.0399976, 7.68)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LWall"]
 position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_bdbni")
+
+[node name="LevelUI" parent="." instance=ExtResource("3_ea8l3")]
+offset_top = -1.52588e-05
+offset_bottom = -1.52588e-05
