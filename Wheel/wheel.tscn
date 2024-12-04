@@ -48,10 +48,8 @@ physics_material_override = SubResource("PhysicsMaterial_mvivu")
 gravity_scale = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.53674e-07, 0)
-scale = Vector2(0.0433355, 0.0433355)
+scale = Vector2(0.045, 0.045)
 texture = ExtResource("1_bo7ji")
-offset = Vector2(1370.96, -826.168)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vggx5")

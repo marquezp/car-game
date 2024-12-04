@@ -2,7 +2,6 @@ extends RigidBody2D
 @onready var car: RigidBody2D = $"."
 @onready var click_box: Area2D = $ClickBox
 @onready var distance_label: Label = $DistanceLabel
-@onready var linear_velocity_label: Label = $LinearVelocityLabel
 @export var max_distance = 100 #TODO mess around with this variable when playtesting
 
 var selected = false

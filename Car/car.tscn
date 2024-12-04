@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv70fssniyws5"]
+[gd_scene load_steps=6 format=3 uid="uid://cv70fssniyws5"]
 
 [ext_resource type="Script" path="res://Car/car.gd" id="1_k1ttg"]
 [ext_resource type="Texture2D" uid="uid://b2f68efbdbgqc" path="res://Assets/car_beta.png" id="2_gpuoq"]
 [ext_resource type="PackedScene" uid="uid://cu13e2iqguwya" path="res://Wheel/wheel.tscn" id="3_hla4v"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2b31p"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cct7o"]
 size = Vector2(36, 23)
 
 [node name="Car" type="RigidBody2D"]
-gravity_scale = 2.0
+physics_material_override = SubResource("PhysicsMaterial_2b31p")
 script = ExtResource("1_k1ttg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -43,13 +45,6 @@ offset_right = 18.0
 offset_bottom = -37.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Speed:"
-
-[node name="LinearVelocityLabel" type="Label" parent="."]
-offset_left = -32.0
-offset_top = -37.0
-offset_right = 8.0
-offset_bottom = -14.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="ClickBox" type="Area2D" parent="."]
 position = Vector2(13, 0)
