@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_b41s2"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_quf80"]
 
-[sub_resource type="Resource" id="Resource_1mk5r"]
+[sub_resource type="Resource" id="Resource_82qpd"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -21,9 +21,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(-97.3799, 35.3445)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_1mk5r")
+properties = SubResource("Resource_82qpd")
 
-[sub_resource type="Resource" id="Resource_l8qko"]
+[sub_resource type="Resource" id="Resource_kv642"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -34,9 +34,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(48.0078, -58.1924)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_l8qko")
+properties = SubResource("Resource_kv642")
 
-[sub_resource type="Resource" id="Resource_chihd"]
+[sub_resource type="Resource" id="Resource_k0vr5"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -47,9 +47,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(45.6293, 33.3765)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_chihd")
+properties = SubResource("Resource_k0vr5")
 
-[sub_resource type="Resource" id="Resource_t5trt"]
+[sub_resource type="Resource" id="Resource_mx418"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -60,7 +60,7 @@ script = ExtResource("6_8tp8d")
 position = Vector2(-97.3799, 35.3445)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_t5trt")
+properties = SubResource("Resource_mx418")
 
 [sub_resource type="Resource" id="Resource_4x7bt"]
 script = ExtResource("7_gm8n6")
@@ -118,7 +118,7 @@ modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(-97.3799, 35.3445, 48.0078, -58.1924, 45.6293, 33.3765, -97.3799, 35.3445)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(669, 500)
+position = Vector2(625, 499)
 rotation = -0.0156288
 scale = Vector2(-1.04413, 1)
 
