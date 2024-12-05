@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://eybshl5aijmx"]
+[gd_scene load_steps=21 format=3 uid="uid://eybshl5aijmx"]
 
 [ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Levels/level_template.tscn" id="1_dompn"]
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="2_vow2u"]
@@ -9,8 +9,9 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="7_gm8n6"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_b41s2"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_quf80"]
+[ext_resource type="PackedScene" uid="uid://bp205iqfw5ykl" path="res://Environment/book_stack.tscn" id="10_wtawh"]
 
-[sub_resource type="Resource" id="Resource_82qpd"]
+[sub_resource type="Resource" id="Resource_er7p7"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -21,9 +22,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(-97.3799, 35.3445)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_82qpd")
+properties = SubResource("Resource_er7p7")
 
-[sub_resource type="Resource" id="Resource_kv642"]
+[sub_resource type="Resource" id="Resource_bqej7"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -34,9 +35,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(48.0078, -58.1924)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_kv642")
+properties = SubResource("Resource_bqej7")
 
-[sub_resource type="Resource" id="Resource_k0vr5"]
+[sub_resource type="Resource" id="Resource_0km57"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -47,9 +48,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(45.6293, 33.3765)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_k0vr5")
+properties = SubResource("Resource_0km57")
 
-[sub_resource type="Resource" id="Resource_mx418"]
+[sub_resource type="Resource" id="Resource_idk65"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -60,7 +61,7 @@ script = ExtResource("6_8tp8d")
 position = Vector2(-97.3799, 35.3445)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_mx418")
+properties = SubResource("Resource_idk65")
 
 [sub_resource type="Resource" id="Resource_4x7bt"]
 script = ExtResource("7_gm8n6")
@@ -99,13 +100,14 @@ render_offset = 0.0
 [node name="LevelTemplate" parent="." instance=ExtResource("1_dompn")]
 
 [node name="Flag" parent="." instance=ExtResource("2_vow2u")]
-position = Vector2(984, 480)
+position = Vector2(819, 358)
 
 [node name="Car" parent="." instance=ExtResource("3_4cr4c")]
 position = Vector2(120, 506)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(473, 499)
+position = Vector2(479, 488)
+scale = Vector2(1.32, 1.32)
 
 [node name="SS2D_Shape" type="Node2D" parent="StaticBody2D"]
 script = ExtResource("4_0qehq")
@@ -115,19 +117,8 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-97.3799, 35.3445, 48.0078, -58.1924, 45.6293, 33.3765, -97.3799, 35.3445)
+position = Vector2(57, 1)
+polygon = PackedVector2Array(-154.38, 34.3445, -8.9922, -59.1924, -11.3707, 32.3765, -154.38, 34.3445)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(625, 499)
-rotation = -0.0156288
-scale = Vector2(-1.04413, 1)
-
-[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D2"]
-script = ExtResource("4_0qehq")
-_points = SubResource("Resource_4x7bt")
-shape_material = SubResource("Resource_vc8ro")
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-97.3799, 35.3445, 48.0078, -58.1924, 45.6293, 33.3765, -97.3799, 35.3445)
+[node name="BookStack" parent="." instance=ExtResource("10_wtawh")]
+position = Vector2(802, 473)

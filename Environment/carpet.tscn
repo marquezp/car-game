@@ -9,8 +9,6 @@ size = Vector2(16, 16)
 [node name="Carpet" type="Area2D"]
 script = ExtResource("1_fkrdo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
 [node name="Gray-carpet-texture" type="Sprite2D" parent="."]
 scale = Vector2(0.00484848, 0.00484848)
 texture = ExtResource("2_csx45")

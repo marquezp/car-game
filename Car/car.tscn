@@ -36,10 +36,17 @@ softness = 1.0
 [node name="Wheel" parent="WheelHolder2" instance=ExtResource("3_hla4v")]
 
 [node name="ChargeUp" type="Label" parent="."]
-offset_left = -34.0
+offset_left = -26.0
 offset_top = -60.0
-offset_right = 18.0
+offset_right = 26.0
 offset_bottom = -37.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="ChargesUsed" type="Label" parent="."]
+offset_left = -27.0
+offset_top = -39.0
+offset_right = 25.0
+offset_bottom = -16.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="ClickBox" type="Area2D" parent="."]
