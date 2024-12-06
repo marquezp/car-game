@@ -16,7 +16,7 @@ point_count = 2
 [node name="LevelTemplate" parent="." instance=ExtResource("1_1ciik")]
 
 [node name="Car" parent="." instance=ExtResource("2_x0dsf")]
-position = Vector2(115, 505)
+position = Vector2(124, 419)
 
 [node name="Flag" parent="." instance=ExtResource("3_fos6k")]
 position = Vector2(729, 482)
@@ -31,3 +31,6 @@ cubic_interp = false
 loop = false
 
 [node name="ToySoldier" parent="Patrol/PathFollow2D" instance=ExtResource("4_32pwm")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(512, 300)

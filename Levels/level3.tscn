@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_quf80"]
 [ext_resource type="PackedScene" uid="uid://bp205iqfw5ykl" path="res://Environment/book_stack.tscn" id="10_wtawh"]
 
-[sub_resource type="Resource" id="Resource_er7p7"]
+[sub_resource type="Resource" id="Resource_umo0q"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -22,9 +22,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(-97.3799, 35.3445)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_er7p7")
+properties = SubResource("Resource_umo0q")
 
-[sub_resource type="Resource" id="Resource_bqej7"]
+[sub_resource type="Resource" id="Resource_qg07r"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -35,9 +35,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(48.0078, -58.1924)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_bqej7")
+properties = SubResource("Resource_qg07r")
 
-[sub_resource type="Resource" id="Resource_0km57"]
+[sub_resource type="Resource" id="Resource_1p88n"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -48,9 +48,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(45.6293, 33.3765)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_0km57")
+properties = SubResource("Resource_1p88n")
 
-[sub_resource type="Resource" id="Resource_idk65"]
+[sub_resource type="Resource" id="Resource_hpbig"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -61,7 +61,7 @@ script = ExtResource("6_8tp8d")
 position = Vector2(-97.3799, 35.3445)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_idk65")
+properties = SubResource("Resource_hpbig")
 
 [sub_resource type="Resource" id="Resource_4x7bt"]
 script = ExtResource("7_gm8n6")
@@ -122,3 +122,6 @@ polygon = PackedVector2Array(-154.38, 34.3445, -8.9922, -59.1924, -11.3707, 32.3
 
 [node name="BookStack" parent="." instance=ExtResource("10_wtawh")]
 position = Vector2(802, 473)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(512, 300)

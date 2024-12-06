@@ -18,3 +18,6 @@ scale = Vector2(6.40001, 6.40001)
 
 [node name="Car" parent="." instance=ExtResource("2_ocbo8")]
 position = Vector2(196, 422)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(512, 300)

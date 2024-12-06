@@ -4,13 +4,13 @@
 [ext_resource type="Script" path="res://Environment/flag.gd" id="1_8nebc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwjmn"]
-size = Vector2(27, 72.5)
+size = Vector2(5, 124.5)
 
 [node name="Flag" type="Area2D"]
 script = ExtResource("1_8nebc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 18.25)
+position = Vector2(0.5, -7.75)
 shape = SubResource("RectangleShape2D_mwjmn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

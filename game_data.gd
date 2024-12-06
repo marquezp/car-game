@@ -40,13 +40,28 @@ func on_level_complete() -> void:
 	var next_level_number = current_scene_file.to_int() + 1
 	total_score += charges_used
 	charges_used = 0
+	call_deferred("end_level_sequence")
+	await get_tree().create_timer(2.0).timeout # wait until triggering next scene
 	if next_level_number <= max_level:
 		var next_level_path = FILE_BEGIN + str(next_level_number) + ".tscn"
 		call_deferred("change_level", next_level_path) # lets physics objects finish their process
 	else:
 		print("Game Over, Total Charges Used: " , total_score)
 		
-
+func end_level_sequence():
+	var car = get_tree().current_scene.get_node("Car")
+	var confetti_list = get_tree().get_nodes_in_group("confetti")
+	for color in confetti_list:
+		color.emitting = true
+	#var camera = get_tree().current_scene.get_node("Camera2D")
+	#var tween = create_tween()
+	# Vector2 is zoom distance, float is speed (smaller = faster) 
+	#tween.tween_property(camera, "zoom", Vector2(2, 2), 0.4)  
+	#tween.parallel().tween_property(camera, "position", car.position, 0.3) # camera follows car
+	
+	car.freeze_car() # stop movement
+	
+		
 # Scene transitions
 func change_level(scene_path):
 	ui_is_ready = false

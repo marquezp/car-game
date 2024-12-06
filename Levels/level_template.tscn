@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cusdvax13dgwc"]
+[gd_scene load_steps=7 format=3 uid="uid://cusdvax13dgwc"]
 
 [ext_resource type="Texture2D" uid="uid://bdto13wmljyvy" path="res://Assets/background.png" id="1_scnnf"]
 [ext_resource type="Texture2D" uid="uid://q5plg1t14t7w" path="res://Assets/floor.png" id="2_u1m5q"]
 [ext_resource type="PackedScene" uid="uid://g510h064yyuf" path="res://UI/level_ui.tscn" id="3_ea8l3"]
+[ext_resource type="PackedScene" uid="uid://6bk5stt3oq5w" path="res://Environment/confetti.tscn" id="4_4pdov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07t6k"]
 size = Vector2(3494.88, 152.381)
@@ -40,3 +41,13 @@ shape = SubResource("RectangleShape2D_bdbni")
 [node name="LevelUI" parent="." instance=ExtResource("3_ea8l3")]
 offset_top = -1.52588e-05
 offset_bottom = -1.52588e-05
+
+[node name="BottomConfetti" parent="." instance=ExtResource("4_4pdov")]
+position = Vector2(1049, 555)
+rotation = -1.19858
+scale = Vector2(6.50033, 6.50033)
+
+[node name="TopConfetti" parent="." instance=ExtResource("4_4pdov")]
+position = Vector2(42, -27)
+rotation = 2.68094
+scale = Vector2(5.58352, 5.58352)
