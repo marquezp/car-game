@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cusdvax13dgwc"]
+[gd_scene load_steps=8 format=3 uid="uid://cusdvax13dgwc"]
 
 [ext_resource type="Texture2D" uid="uid://bdto13wmljyvy" path="res://Assets/background.png" id="1_scnnf"]
 [ext_resource type="Texture2D" uid="uid://q5plg1t14t7w" path="res://Assets/floor.png" id="2_u1m5q"]
 [ext_resource type="PackedScene" uid="uid://g510h064yyuf" path="res://UI/level_ui.tscn" id="3_ea8l3"]
 [ext_resource type="PackedScene" uid="uid://6bk5stt3oq5w" path="res://Environment/confetti.tscn" id="4_4pdov"]
+[ext_resource type="PackedScene" uid="uid://eisfbfnovsr3" path="res://UI/pause_menu.tscn" id="4_hah2y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07t6k"]
 size = Vector2(3494.88, 152.381)
@@ -38,10 +39,12 @@ scale = Vector2(0.0399976, 7.68)
 position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_bdbni")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="LevelUI" parent="CanvasLayer" instance=ExtResource("3_ea8l3")]
+[node name="LevelUI" parent="UI" instance=ExtResource("3_ea8l3")]
 offset_top = -1.52588e-05
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("4_hah2y")]
 
 [node name="BottomConfetti" parent="." instance=ExtResource("4_4pdov")]
 position = Vector2(1049, 555)

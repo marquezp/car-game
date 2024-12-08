@@ -5,7 +5,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Car":
-		GameData.on_level_complete()
+		SceneManager.on_level_complete()
 		
 
 	

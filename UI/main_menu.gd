@@ -14,7 +14,7 @@ func _ready():
 func on_start_pressed():
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
-	GameData.change_level(start_level_path)
+	SceneManager.change_level(start_level_path)
 	
 func on_exit_pressed():
-	GameData.end_game()
+	SceneManager.end_game()

@@ -5,8 +5,8 @@ extends Control
 
 func _ready():
 	# Connect to GameData and tell it we're ready to show
-	GameData.show_ui_popup.connect(fade_in)
-	GameData.ui_ready()
+	SceneManager.show_ui_popup.connect(fade_in)
+	SceneManager.ui_ready()
 	# fade out timer
 	timer.timeout.connect(_on_time_out)
 	
