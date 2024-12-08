@@ -38,9 +38,10 @@ scale = Vector2(0.0399976, 7.68)
 position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_bdbni")
 
-[node name="LevelUI" parent="." instance=ExtResource("3_ea8l3")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelUI" parent="CanvasLayer" instance=ExtResource("3_ea8l3")]
 offset_top = -1.52588e-05
-offset_bottom = -1.52588e-05
 
 [node name="BottomConfetti" parent="." instance=ExtResource("4_4pdov")]
 position = Vector2(1049, 555)

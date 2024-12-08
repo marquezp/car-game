@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.3", "Mobile")
 [autoload]
 
 GameData="*res://game_data.tscn"
+TransitionScreen="*res://UI/transition_screen.tscn"
 
 [display]
 
@@ -37,4 +38,4 @@ click={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"

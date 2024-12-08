@@ -12,6 +12,8 @@ func _ready():
 	exit_button.button_down.connect(on_exit_pressed)
 	
 func on_start_pressed():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	GameData.change_level(start_level_path)
 	
 func on_exit_pressed():
