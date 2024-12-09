@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bj1j1yc8rrevm"]
 
-[ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Levels/level_template.tscn" id="1_2dr54"]
+[ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Environment/level_template.tscn" id="1_2dr54"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="2_ocbo8"]
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="3_682ff"]
 [ext_resource type="PackedScene" uid="uid://bun32233l0ftl" path="res://Environment/carpet.tscn" id="4_xxqeh"]

@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdf7mv7pkrpmh"]
 
-[ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Levels/level_template.tscn" id="1_1ciik"]
+[ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Environment/level_template.tscn" id="1_1ciik"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="2_x0dsf"]
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="3_fos6k"]
 [ext_resource type="PackedScene" uid="uid://cpxrcesv2rsft" path="res://Environment/toy_soldier.tscn" id="4_32pwm"]
 
 [sub_resource type="Curve2D" id="Curve2D_06vw8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 625, 501, 0, 0, 0, 0, 813, 500)
+"points": PackedVector2Array(0, 0, 0, 0, 667, 490, 0, 0, 0, 0, 775, 488)
 }
 point_count = 2
 
@@ -25,7 +25,7 @@ position = Vector2(729, 482)
 curve = SubResource("Curve2D_06vw8")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Patrol"]
-position = Vector2(625, 501)
+position = Vector2(667, 490)
 rotates = false
 cubic_interp = false
 loop = false

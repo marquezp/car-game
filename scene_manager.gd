@@ -2,6 +2,7 @@ extends Node
 
 const FILE_BEGIN = "res://Levels/level"
 const MAIN_MENU_PATH = "res://UI/main_menu.tscn"
+const LEVEL_SELECT_PATH = "res://UI/level_select.tscn"
 @export var max_level: int = 4
 
 var ui_is_ready : bool = false
@@ -61,6 +62,9 @@ func end_level_sequence():
 	#tween.parallel().tween_property(camera, "position", car.position, 0.3) # camera follows car
 	
 	car.freeze_car() # stop movement
+
+func show_level_select():
+	get_tree().change_scene_to_file(LEVEL_SELECT_PATH)
 	
 # Scene transitions
 func change_level(scene_path):
