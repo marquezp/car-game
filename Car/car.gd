@@ -5,7 +5,7 @@ extends RigidBody2D
 @onready var charges_used: Label = $ChargesUsed
 
 const STOP_THRESHOLD = 3.45
-const STOP_FORCE = 0.9
+const STOP_FORCE = 0.85
 # TODO mess around with these 2 variables when playtesting
 @export var max_charge: int = 100
 @export var car_speed: int = 450
@@ -43,7 +43,7 @@ func slow_down_car() -> void:
 	for wheel in wheels:
 		if abs(wheel.angular_velocity) < STOP_THRESHOLD:
 			wheel.angular_velocity *= STOP_FORCE # Reduce speed
-			if abs(wheel.angular_velocity) < 0.8: # Very slow
+			if abs(wheel.angular_velocity) < 1: # Very slow
 				wheel.angular_velocity = 0 # Force complete stop
 				post_launch = false
 				
@@ -55,7 +55,7 @@ func freeze_car() -> void:
 
 # This function handles global inputs
 func _input(event):
-	if SceneManager.is_input_enabled(): # make sure we're accepting player input
+	if SceneManager.is_input_enabled() and !post_launch: # make sure we're accepting player input
 		# Handles charging (space bar)
 		if event is InputEventKey and event.keycode == KEY_SPACE:
 			if event.pressed:

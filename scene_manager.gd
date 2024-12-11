@@ -12,6 +12,9 @@ var input_enabled : bool = true
 signal show_ui_popup
 signal show_pause_menu
 
+func is_input_enabled():
+	return input_enabled
+	
 func pause_game():
 	emit_signal("show_pause_menu")
 	
@@ -84,6 +87,3 @@ func reset_game():
 	
 func end_game():
 	get_tree().quit()
-
-func is_input_enabled():
-	return input_enabled
