@@ -18,6 +18,7 @@ extends Control
 
 # Button used for each level
 const LEVEL_BUTTON = preload("res://UI/level_button.tscn")
+var buttons_list = []
 
 
 func _ready():
@@ -47,17 +48,21 @@ func on_exit_pressed():
 # LEVEL SELECT BUTTONS
 # Goes through the levels directory and gets all the levels
 func get_levels(path):
+	print(path)
 	var dir = DirAccess.open(path)
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			print(file_name)
-			create_level_btn(file_name)
+			buttons_list.append(file_name)
 			file_name = dir.get_next()
 		dir.list_dir_end()
 	else:
 		print("An error occurred when trying to access the path.")
+	buttons_list.sort()
+	for button in buttons_list:
+		create_level_btn(button)
+		
 		
 # Instantiates the level buttons and places them in the grid
 func create_level_btn(lvl_name):
