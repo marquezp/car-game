@@ -6,7 +6,6 @@ var total_score: int = 0: get = get_total_score
 
 func set_charges_used(value: int) -> void:
 	charges_used = value
-	print(charges_used) 
 
 func get_charges_used() -> int:
 	return charges_used

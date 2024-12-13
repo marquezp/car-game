@@ -13,8 +13,8 @@
 position = Vector2(984, 479)
 
 [node name="Carpet" parent="." instance=ExtResource("4_xxqeh")]
-position = Vector2(455, 548)
-scale = Vector2(6.40001, 6.40001)
+position = Vector2(633, 547)
+scale = Vector2(39.3865, 6.27887)
 
 [node name="Car" parent="." instance=ExtResource("2_ocbo8")]
 position = Vector2(196, 422)

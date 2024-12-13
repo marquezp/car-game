@@ -136,3 +136,13 @@ offset_top = 30.0
 offset_right = 52.0
 offset_bottom = 32.0
 text = "<--"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 53.0
+offset_top = 316.0
+offset_right = 331.0
+offset_bottom = 339.0
+rotation = -0.36487
+text = "Hold Space to charge up the toy car!"

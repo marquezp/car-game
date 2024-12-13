@@ -13,10 +13,11 @@ const STOP_FORCE = 0.85
 var current_charge: float = 0.0
 var damping_factor: float = 0.0
 var post_launch: bool = false
+var is_car_moving: bool = false
 var selected: bool = false
 var is_slowing_down: bool = false
 var wheels = []
-var is_car_moving = false
+
 
 func _ready():
 	# add the wheels to an array
@@ -35,6 +36,7 @@ func stop_slowing_down():
 	
 # Apply the charge generated as torque on the wheels
 func move_car(charge):
+	print("moving car")
 	for wheel in wheels:
 		wheel.apply_torque_impulse(charge * car_speed)
 	
@@ -81,8 +83,7 @@ func _physics_process(delta: float) -> void:
 	if current_charge >= max_charge:
 		selected = false
 		move_car(current_charge)
-	
-	print(car.linear_velocity.x, is_car_moving)
+
 	# This check tells the slow_down_car() to start checking
 	if post_launch:
 		slow_down_car()
@@ -93,8 +94,9 @@ func _physics_process(delta: float) -> void:
 		if abs(car.linear_velocity.x) > STOP_THRESHOLD:
 			post_launch = true
 			
-	# Check for carpet
-	if is_slowing_down:
+	# Check for carpet, post_launch check is to get the car past the STOP_THRESHOLD
+	if post_launch and is_slowing_down:
+		print(car.linear_velocity.x)
 		for wheel in wheels:
 			wheel.angular_velocity *= damping_factor
 			
