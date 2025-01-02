@@ -2,13 +2,14 @@ class_name MainMenu
 extends Control
 
 # Nav Buttons
-@onready var start_button: Button = $MarginContainer/OptionsContainer/VBoxContainer/StartButton
-@onready var level_select_button: Button = $MarginContainer/OptionsContainer/VBoxContainer/LevelSelectButton
-@onready var exit_button: Button = $MarginContainer/OptionsContainer/VBoxContainer/ExitButton
+@onready var start_button: TextureButton = $MarginContainer/OptionsContainer/StartButton
+@onready var level_select_button: TextureButton = $MarginContainer/OptionsContainer/LevelSelectButton
+@onready var exit_button: TextureButton = $MarginContainer/OptionsContainer/ExitButton
+
 @onready var back_button: Button = $BackButton
 
 # Containers
-@onready var options_container: HBoxContainer = $MarginContainer/OptionsContainer
+@onready var options_container: Control = $MarginContainer/OptionsContainer
 @onready var level_select_container: VBoxContainer = $LevelSelectContainer
 @onready var level_buttons_grid: GridContainer = $LevelSelectContainer/HBoxContainer/LevelButtonsGrid
 

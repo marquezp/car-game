@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cu13e2iqguwya"]
 
-[ext_resource type="Texture2D" uid="uid://dh6bq1xa1pcpr" path="res://Assets/CarAsset.png" id="1_o7ng2"]
+[ext_resource type="Texture2D" uid="uid://dh6bq1xa1pcpr" path="res://Assets/Car/CarAsset.png" id="1_o7ng2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mvivu"]
 

@@ -42,7 +42,7 @@ offset_top = -1.52588e-05
 [node name="PauseMenu" parent="UI" instance=ExtResource("4_hah2y")]
 
 [node name="BottomConfetti" parent="." instance=ExtResource("4_4pdov")]
-position = Vector2(1049, 555)
+position = Vector2(1172, 577)
 rotation = -1.19858
 scale = Vector2(6.50033, 6.50033)
 

@@ -1,99 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://eybshl5aijmx"]
+[gd_scene load_steps=6 format=3 uid="uid://eybshl5aijmx"]
 
 [ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Environment/level_template.tscn" id="1_dompn"]
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="2_vow2u"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="3_4cr4c"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape.gd" id="4_0qehq"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="5_fp7ys"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="6_8tp8d"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="7_gm8n6"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_b41s2"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_quf80"]
+[ext_resource type="Texture2D" uid="uid://dly5xqegjl77o" path="res://Assets/bookStacks.png" id="5_d8n85"]
 [ext_resource type="PackedScene" uid="uid://bp205iqfw5ykl" path="res://Environment/book_stack.tscn" id="10_wtawh"]
-
-[sub_resource type="Resource" id="Resource_10ugl"]
-script = ExtResource("5_fp7ys")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_xkex8"]
-script = ExtResource("6_8tp8d")
-position = Vector2(-97.3799, 35.3445)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_10ugl")
-
-[sub_resource type="Resource" id="Resource_tolsm"]
-script = ExtResource("5_fp7ys")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_lq5qg"]
-script = ExtResource("6_8tp8d")
-position = Vector2(48.0078, -58.1924)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_tolsm")
-
-[sub_resource type="Resource" id="Resource_s8eao"]
-script = ExtResource("5_fp7ys")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_826pg"]
-script = ExtResource("6_8tp8d")
-position = Vector2(45.6293, 33.3765)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_s8eao")
-
-[sub_resource type="Resource" id="Resource_ghg4x"]
-script = ExtResource("5_fp7ys")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_73yqo"]
-script = ExtResource("6_8tp8d")
-position = Vector2(-97.3799, 35.3445)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_ghg4x")
-
-[sub_resource type="Resource" id="Resource_4x7bt"]
-script = ExtResource("7_gm8n6")
-_points = {
-0: SubResource("Resource_xkex8"),
-1: SubResource("Resource_lq5qg"),
-2: SubResource("Resource_826pg"),
-3: SubResource("Resource_73yqo")
-}
-_point_order = PackedInt32Array(0, 1, 2, 3)
-_constraints = {
-Vector2i(0, 3): 15
-}
-_next_key = 4
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_vc8ro"]
-script = ExtResource("9_quf80")
-_edge_meta_materials = Array[ExtResource("8_b41s2")]([])
-fill_textures = Array[Texture2D]([])
-fill_texture_z_index = -10
-fill_texture_show_behind_parent = false
-fill_texture_scale = 1.0
-fill_texture_absolute_position = false
-fill_texture_absolute_rotation = false
-fill_texture_offset = Vector2(0, 0)
-fill_texture_angle_offset = 0.0
-fill_mesh_offset = 0.0
-render_offset = 0.0
 
 [node name="Level3" type="Node2D"]
 position = Vector2(65, 25)
@@ -102,28 +13,28 @@ position = Vector2(65, 25)
 position = Vector2(-63, -23)
 
 [node name="Flag" parent="." instance=ExtResource("2_vow2u")]
-position = Vector2(819, 358)
+position = Vector2(874, 387)
 
 [node name="Car" parent="." instance=ExtResource("3_4cr4c")]
-position = Vector2(148, 529)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(527, 514)
-scale = Vector2(1.32, 1.32)
-
-[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D"]
-script = ExtResource("4_0qehq")
-_points = SubResource("Resource_4x7bt")
-shape_material = SubResource("Resource_vc8ro")
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-modulate = Color(1, 1, 1, 0.3)
-position = Vector2(57, 1)
-polygon = PackedVector2Array(-154.38, 34.3445, -8.9922, -59.1924, -11.3707, 32.3765, -154.38, 34.3445)
+position = Vector2(177, 530)
 
 [node name="BookStack" parent="." instance=ExtResource("10_wtawh")]
-position = Vector2(802, 473)
+position = Vector2(897, 503)
+scale = Vector2(10.64, 10.64)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(512, 300)
+
+[node name="Ramp" type="StaticBody2D" parent="."]
+position = Vector2(72, -13)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ramp"]
+position = Vector2(470, 522)
+scale = Vector2(0.67999, 0.67999)
+texture = ExtResource("5_d8n85")
+vframes = 8
+frame = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramp"]
+scale = Vector2(0.973772, 1.22267)
+polygon = PackedVector2Array(485.74, 388.495, 307.053, 467.012, 658.265, 467.012)

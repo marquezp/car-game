@@ -6,18 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://bun32233l0ftl" path="res://Environment/carpet.tscn" id="4_xxqeh"]
 
 [node name="Level2" type="Node2D"]
+position = Vector2(68, 23)
 
 [node name="LevelTemplate" parent="." instance=ExtResource("1_2dr54")]
+position = Vector2(-67, -20)
 
 [node name="Flag" parent="." instance=ExtResource("3_682ff")]
 position = Vector2(1040, 526)
 
 [node name="Carpet" parent="." instance=ExtResource("4_xxqeh")]
-position = Vector2(707, 587)
+position = Vector2(655, 565)
 scale = Vector2(36.1065, 7.84116)
 
 [node name="Car" parent="." instance=ExtResource("2_ocbo8")]
-position = Vector2(196, 422)
+position = Vector2(107, 530)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(512, 300)

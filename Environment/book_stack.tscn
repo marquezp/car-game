@@ -1,17 +1,25 @@
 [gd_scene load_steps=3 format=3 uid="uid://bp205iqfw5ykl"]
 
-[ext_resource type="Texture2D" uid="uid://bymaacuashua1" path="res://Assets/book_stack.png" id="1_dsp3m"]
+[ext_resource type="Texture2D" uid="uid://dly5xqegjl77o" path="res://Assets/bookStacks.png" id="1_unitv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5aeea"]
-size = Vector2(2620, 2970)
+size = Vector2(420, 220)
 
 [node name="BookStack" type="StaticBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Book1" type="Sprite2D" parent="."]
+position = Vector2(1, -3.5)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_dsp3m")
+texture = ExtResource("1_unitv")
+vframes = 8
+
+[node name="Book2" type="Sprite2D" parent="."]
+position = Vector2(1, 3.2)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_unitv")
+vframes = 8
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, 14)
 scale = Vector2(0.05, 0.05)
 shape = SubResource("RectangleShape2D_5aeea")

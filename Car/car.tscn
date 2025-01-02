@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://cv70fssniyws5"]
 
 [ext_resource type="Script" path="res://Car/car.gd" id="1_k1ttg"]
-[ext_resource type="Texture2D" uid="uid://dh6bq1xa1pcpr" path="res://Assets/CarAsset.png" id="2_mpqdl"]
-[ext_resource type="Texture2D" uid="uid://dvofja7c23i3l" path="res://Assets/windupAssets.png" id="2_qner1"]
+[ext_resource type="Texture2D" uid="uid://dh6bq1xa1pcpr" path="res://Assets/Car/CarAsset.png" id="2_mpqdl"]
+[ext_resource type="Texture2D" uid="uid://dvofja7c23i3l" path="res://Assets/Car/windupAssets.png" id="2_qner1"]
 [ext_resource type="PackedScene" uid="uid://cu13e2iqguwya" path="res://Wheel/wheel.tscn" id="3_hla4v"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2b31p"]

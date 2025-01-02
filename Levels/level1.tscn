@@ -5,11 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="3_31cmc"]
 
 [node name="Level1" type="Node2D"]
+position = Vector2(68, 25)
 
 [node name="LevelTemplate" parent="." instance=ExtResource("1_jdhaj")]
+position = Vector2(-65, -26)
 
 [node name="Car" parent="." instance=ExtResource("2_8ia72")]
-position = Vector2(142, 546)
+position = Vector2(122, 527)
 
 [node name="Flag" parent="." instance=ExtResource("3_31cmc")]
 position = Vector2(993, 527)
