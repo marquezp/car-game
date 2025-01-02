@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xph3ueo7bfu"
-path="res://.godot/imported/SoldierAsset.png-495b16b55be7c10b03f513e549d2d1d4.ctex"
+uid="uid://o8t56guxbruc"
+path="res://.godot/imported/oneHighlight.png-2b73b60163fe11fe1f21d81ff73706ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SoldierAsset.png"
-dest_files=["res://.godot/imported/SoldierAsset.png-495b16b55be7c10b03f513e549d2d1d4.ctex"]
+source_file="res://Assets/Buttons/levelButtons/oneHighlight.png"
+dest_files=["res://.godot/imported/oneHighlight.png-2b73b60163fe11fe1f21d81ff73706ab.ctex"]
 
 [params]
 
