@@ -10,11 +10,11 @@
 [node name="LevelTemplate" parent="." instance=ExtResource("1_2dr54")]
 
 [node name="Flag" parent="." instance=ExtResource("3_682ff")]
-position = Vector2(984, 479)
+position = Vector2(1040, 526)
 
 [node name="Carpet" parent="." instance=ExtResource("4_xxqeh")]
-position = Vector2(633, 547)
-scale = Vector2(39.3865, 6.27887)
+position = Vector2(707, 587)
+scale = Vector2(36.1065, 7.84116)
 
 [node name="Car" parent="." instance=ExtResource("2_ocbo8")]
 position = Vector2(196, 422)

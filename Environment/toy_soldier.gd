@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 const SPEED = 80
 
@@ -12,3 +13,4 @@ func _physics_process(delta: float) -> void:
 	parent.progress += SPEED * delta * dir
 	if parent.progress_ratio == 0 or parent.progress_ratio == 1:
 		dir *= -1
+		sprite_2d.flip_h = !sprite_2d.flip_h

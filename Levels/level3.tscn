@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_quf80"]
 [ext_resource type="PackedScene" uid="uid://bp205iqfw5ykl" path="res://Environment/book_stack.tscn" id="10_wtawh"]
 
-[sub_resource type="Resource" id="Resource_p8sfi"]
+[sub_resource type="Resource" id="Resource_10ugl"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -22,9 +22,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(-97.3799, 35.3445)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_p8sfi")
+properties = SubResource("Resource_10ugl")
 
-[sub_resource type="Resource" id="Resource_qr2t0"]
+[sub_resource type="Resource" id="Resource_tolsm"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -35,9 +35,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(48.0078, -58.1924)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_qr2t0")
+properties = SubResource("Resource_tolsm")
 
-[sub_resource type="Resource" id="Resource_iahhy"]
+[sub_resource type="Resource" id="Resource_s8eao"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -48,9 +48,9 @@ script = ExtResource("6_8tp8d")
 position = Vector2(45.6293, 33.3765)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_iahhy")
+properties = SubResource("Resource_s8eao")
 
-[sub_resource type="Resource" id="Resource_ssk87"]
+[sub_resource type="Resource" id="Resource_ghg4x"]
 script = ExtResource("5_fp7ys")
 texture_idx = 0
 flip = false
@@ -61,7 +61,7 @@ script = ExtResource("6_8tp8d")
 position = Vector2(-97.3799, 35.3445)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_ssk87")
+properties = SubResource("Resource_ghg4x")
 
 [sub_resource type="Resource" id="Resource_4x7bt"]
 script = ExtResource("7_gm8n6")
@@ -96,17 +96,19 @@ fill_mesh_offset = 0.0
 render_offset = 0.0
 
 [node name="Level3" type="Node2D"]
+position = Vector2(65, 25)
 
 [node name="LevelTemplate" parent="." instance=ExtResource("1_dompn")]
+position = Vector2(-63, -23)
 
 [node name="Flag" parent="." instance=ExtResource("2_vow2u")]
 position = Vector2(819, 358)
 
 [node name="Car" parent="." instance=ExtResource("3_4cr4c")]
-position = Vector2(120, 506)
+position = Vector2(148, 529)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(479, 488)
+position = Vector2(527, 514)
 scale = Vector2(1.32, 1.32)
 
 [node name="SS2D_Shape" type="Node2D" parent="StaticBody2D"]

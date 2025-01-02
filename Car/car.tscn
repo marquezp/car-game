@@ -77,14 +77,6 @@ _data = {
 physics_material_override = SubResource("PhysicsMaterial_2b31p")
 script = ExtResource("1_k1ttg")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-45, 5)
-scale = Vector2(1, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-2.5, 0)
-shape = SubResource("RectangleShape2D_ggj7h")
-
 [node name="WindupSprite" type="Sprite2D" parent="."]
 position = Vector2(-47, 5)
 scale = Vector2(0.164, 0.164)
@@ -92,6 +84,14 @@ texture = ExtResource("2_qner1")
 vframes = 4
 region_enabled = true
 region_rect = Rect2(30, 183, 250.59, 1283.4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-45, 5)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_ggj7h")
 
 [node name="CarBodySprite" type="Sprite2D" parent="."]
 position = Vector2(18, -2)

@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cusdvax13dgwc"]
+[gd_scene load_steps=7 format=3 uid="uid://cusdvax13dgwc"]
 
-[ext_resource type="Texture2D" uid="uid://bdto13wmljyvy" path="res://Assets/background.png" id="1_scnnf"]
-[ext_resource type="Texture2D" uid="uid://q5plg1t14t7w" path="res://Assets/floor.png" id="2_u1m5q"]
+[ext_resource type="Texture2D" uid="uid://c0vjv8nuvr4ou" path="res://Assets/backgroundBase.png" id="1_imqnd"]
 [ext_resource type="PackedScene" uid="uid://g510h064yyuf" path="res://UI/level_ui.tscn" id="3_ea8l3"]
 [ext_resource type="PackedScene" uid="uid://6bk5stt3oq5w" path="res://Environment/confetti.tscn" id="4_4pdov"]
 [ext_resource type="PackedScene" uid="uid://eisfbfnovsr3" path="res://UI/pause_menu.tscn" id="4_hah2y"]
@@ -15,24 +14,20 @@ size = Vector2(1175, 75.5)
 [node name="LevelTemplate" type="Node2D"]
 
 [node name="WallPaper" type="Sprite2D" parent="."]
-scale = Vector2(0.292742, 0.292742)
-texture = ExtResource("1_scnnf")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_imqnd")
 centered = false
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(684.284, 535.82)
-scale = Vector2(0.293, 0.42)
-
-[node name="FloorSprite" type="Sprite2D" parent="Floor"]
-position = Vector2(-588, -571)
-texture = ExtResource("2_u1m5q")
+position = Vector2(768, 583)
+scale = Vector2(0.333, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(-588, 76.619)
 shape = SubResource("RectangleShape2D_07t6k")
 
 [node name="LWall" type="StaticBody2D" parent="."]
-position = Vector2(-22, 240)
+position = Vector2(-20, 251)
 scale = Vector2(0.0399976, 7.68)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LWall"]
