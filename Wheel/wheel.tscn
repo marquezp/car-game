@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cu13e2iqguwya"]
 
-[ext_resource type="Texture2D" uid="uid://cyalehwtkj3qw" path="res://Assets/car_beta_tire.png" id="1_bo7ji"]
+[ext_resource type="Texture2D" uid="uid://dh6bq1xa1pcpr" path="res://Assets/CarAsset.png" id="1_o7ng2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mvivu"]
 
@@ -50,8 +50,11 @@ angular_damp_mode = 1
 angular_damp = 1.6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.045, 0.045)
-texture = ExtResource("1_bo7ji")
+position = Vector2(0, -2.98023e-08)
+scale = Vector2(0.131475, 0.131475)
+texture = ExtResource("1_o7ng2")
+region_enabled = true
+region_rect = Rect2(503, 1070, 152, 147)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vggx5")

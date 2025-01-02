@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5mxcamdvpfl3"]
+[gd_scene load_steps=5 format=3 uid="uid://b5mxcamdvpfl3"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_32lnu"]
-[ext_resource type="Texture2D" uid="uid://bdto13wmljyvy" path="res://Assets/background.png" id="1_dbx3c"]
-[ext_resource type="Texture2D" uid="uid://q5plg1t14t7w" path="res://Assets/floor.png" id="2_1fuk6"]
+[ext_resource type="Texture2D" uid="uid://c0vjv8nuvr4ou" path="res://Assets/backgroundBase.png" id="2_kl72j"]
 
 [sub_resource type="SystemFont" id="SystemFont_f1fcp"]
 font_names = PackedStringArray("Impact")
@@ -21,19 +20,15 @@ script = ExtResource("1_32lnu")
 
 [node name="Wall" type="TextureRect" parent="."]
 layout_mode = 1
-offset_right = 3508.0
-offset_bottom = 2480.0
+anchors_preset = -1
+anchor_right = 0.892226
+anchor_bottom = 1.12136
+offset_right = 2480.16
+offset_bottom = 1753.36
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.293, 0.293)
-texture = ExtResource("1_dbx3c")
-
-[node name="Floor" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -1.0
-offset_top = -223.0
-offset_right = 3507.0
-offset_bottom = 2257.0
-scale = Vector2(0.293, 0.42)
-texture = ExtResource("2_1fuk6")
+texture = ExtResource("2_kl72j")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

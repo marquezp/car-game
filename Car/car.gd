@@ -4,6 +4,7 @@ extends RigidBody2D
 @onready var charge_up: Label = $ChargeUp
 @onready var charges_used: Label = $ChargesUsed
 @onready var moving_label: Label = $MovingLabel
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 const STOP_THRESHOLD = 34.1
 const STOP_FORCE = 0.85
@@ -42,6 +43,7 @@ func move_car(charge):
 	
 	current_charge = 0
 	is_car_moving = true
+	animation_player.stop()
 	GameData.increment_charges_used()
 	
 func slow_down_car() -> void:
@@ -75,6 +77,7 @@ func _input(event):
 func _physics_process(delta: float) -> void:
 	# Handle charging up the car
 	if selected:
+		animation_player.play("spin")
 		current_charge = min(current_charge + (50 * delta), max_charge)
 		for wheel in wheels:
 			wheel.get_node("AnimationPlayer").play("charge_up")
