@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5mxcamdvpfl3"]
+[gd_scene load_steps=12 format=3 uid="uid://b5mxcamdvpfl3"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_32lnu"]
 [ext_resource type="Texture2D" uid="uid://c0vjv8nuvr4ou" path="res://Assets/backgroundBase.png" id="2_kl72j"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmutvoaprbadu" path="res://UI/Buttons/level_select_button.tscn" id="4_secd8"]
 [ext_resource type="PackedScene" uid="uid://3uj7gnuyafal" path="res://UI/Buttons/exit_button.tscn" id="5_ohsd3"]
 [ext_resource type="Texture2D" uid="uid://b5mkxo8takq40" path="res://Assets/Buttons/menuStuff.png" id="6_quc0w"]
+[ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="7_yvmwu"]
 
 [sub_resource type="SystemFont" id="SystemFont_f1fcp"]
 font_names = PackedStringArray("Impact")
@@ -13,6 +14,12 @@ font_names = PackedStringArray("Impact")
 [sub_resource type="AtlasTexture" id="AtlasTexture_q8sqf"]
 atlas = ExtResource("6_quc0w")
 region = Rect2(161, 881, 202, 201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c87de"]
+size = Vector2(1175, 75.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dmy5"]
+size = Vector2(3494.88, 152.381)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -29,6 +36,9 @@ offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_kl72j")
+
+[node name="Car" parent="." instance=ExtResource("7_yvmwu")]
+position = Vector2(95, 551)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -131,3 +141,19 @@ offset_top = 30.0
 offset_right = 52.0
 offset_bottom = 32.0
 text = "<--"
+
+[node name="LWall" type="StaticBody2D" parent="."]
+position = Vector2(-20, 251)
+scale = Vector2(0.0399976, 7.68)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LWall"]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_c87de")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(768, 583)
+scale = Vector2(0.333, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-588, 76.619)
+shape = SubResource("RectangleShape2D_5dmy5")

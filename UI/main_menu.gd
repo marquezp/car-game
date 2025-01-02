@@ -21,6 +21,8 @@ extends Control
 const LEVEL_BUTTON = preload("res://UI/level_button.tscn")
 var buttons_list = []
 
+@onready var car: RigidBody2D = $Car
+
 
 func _ready():
 	get_levels(levels_folder)
