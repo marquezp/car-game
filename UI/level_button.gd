@@ -1,7 +1,8 @@
-extends Button
+extends TextureButton
 const FILE_BEGIN = "res://Levels/level"
 var original_size := scale
 var grow_size := Vector2(1.1, 1.1)
+var level : int
 
 func _ready():
 	self.pressed.connect(_on_pressed)
@@ -11,7 +12,7 @@ func _ready():
 func _on_pressed():
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
-	SceneManager.change_level(FILE_BEGIN + self.text + ".tscn")
+	SceneManager.change_level(FILE_BEGIN + str(level) + ".tscn")
 	
 func _on_mouse_entered():
 	grow_btn(grow_size, .1)

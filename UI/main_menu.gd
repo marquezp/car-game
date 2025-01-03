@@ -7,11 +7,12 @@ extends Control
 @onready var exit_button: TextureButton = $MarginContainer/OptionsContainer/ExitButton
 
 @onready var back_button: Button = $BackButton
+@onready var level_buttons_grid: GridContainer = $LevelSelectContainer/LevelButtonsGrid
 
 # Containers
 @onready var options_container: Control = $MarginContainer/OptionsContainer
-@onready var level_select_container: VBoxContainer = $LevelSelectContainer
-@onready var level_buttons_grid: GridContainer = $LevelSelectContainer/HBoxContainer/LevelButtonsGrid
+@onready var level_select_container: Control = $LevelSelectContainer
+
 
 # File/Dir Paths
 @onready var start_level_path = "res://Levels/level1.tscn"
@@ -20,6 +21,7 @@ extends Control
 # Button used for each level
 const LEVEL_BUTTON = preload("res://UI/level_button.tscn")
 var buttons_list = []
+const button_sprites_path = "res://Assets/Buttons/levelButtons/"
 
 @onready var car: RigidBody2D = $Car
 
@@ -63,6 +65,10 @@ func get_levels(path):
 	else:
 		print("An error occurred when trying to access the path.")
 	buttons_list.sort()
+	# This is a quick workaround that would have to change if we add more than 10 levels
+	var level10 = buttons_list[1]
+	buttons_list.remove_at(1)
+	buttons_list.append(level10)
 	for button in buttons_list:
 		create_level_btn(button)
 		
@@ -70,7 +76,31 @@ func get_levels(path):
 # Instantiates the level buttons and places them in the grid
 func create_level_btn(lvl_name):
 	var btn = LEVEL_BUTTON.instantiate()
-	btn.text = str(lvl_name.to_int())
+	
+	# Normal State
+	var normal_image_path = button_sprites_path + str(lvl_name.to_int()) + "Basic.png"
+	var normal_texture = load(normal_image_path)  # load used to get a resource
+	
+	# Hover State
+	var hover_image_path = button_sprites_path + str(lvl_name.to_int()) + "Highlight.png"
+	var hover_texture = load(hover_image_path)  # load used to get a resource
+	
+	#Check if textures loaded successfully
+	if normal_texture == null:
+		print("Error: Failed to load normal texture from path: ", normal_image_path)
+		return
+	if hover_texture == null:
+		print("Error: Failed to load hover texture from path: ", hover_image_path)
+		return
+		
+	# Add textures to the button
+	btn.texture_normal = normal_texture
+	btn.texture_hover = hover_texture
+	
+	# Attach corresponding level
+	btn.level = str(lvl_name.to_int())
+	
+	# Add to the grid
 	level_buttons_grid.add_child(btn)
 	
 func on_back_pressed():

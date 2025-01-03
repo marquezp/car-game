@@ -106,32 +106,6 @@ offset_bottom = 654.0
 scale = Vector2(0.68, 0.68)
 texture = SubResource("AtlasTexture_q8sqf")
 
-[node name="LevelSelectContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 25
-alignment = 1
-
-[node name="LevelSelectText" type="Label" parent="LevelSelectContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Level Select"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelectContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="LevelButtonsGrid" type="GridContainer" parent="LevelSelectContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-columns = 3
-
 [node name="BackButton" type="Button" parent="."]
 custom_minimum_size = Vector2(50, 30)
 layout_mode = 1
@@ -157,3 +131,33 @@ scale = Vector2(0.333, 0.42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(-588, 76.619)
 shape = SubResource("RectangleShape2D_5dmy5")
+
+[node name="LevelSelectContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelSelectText" type="Label" parent="LevelSelectContainer"]
+layout_mode = 2
+offset_top = 177.0
+offset_right = 1152.0
+offset_bottom = 222.0
+theme_override_font_sizes/font_size = 32
+text = "Level Select"
+horizontal_alignment = 1
+
+[node name="LevelButtonsGrid" type="GridContainer" parent="LevelSelectContainer"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 553.0
+offset_top = 331.0
+offset_right = 553.0
+offset_bottom = 331.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 20
+columns = 3

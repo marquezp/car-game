@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvlqd1td33abf"]
+
+[ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Environment/level_template.tscn" id="1_fposp"]
+[ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="2_hfv4h"]
+[ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="3_inoq8"]
+
+[node name="Level1" type="Node2D"]
+position = Vector2(68, 25)
+
+[node name="LevelTemplate" parent="." instance=ExtResource("1_fposp")]
+position = Vector2(-65, -26)
+
+[node name="Car" parent="." instance=ExtResource("2_hfv4h")]
+position = Vector2(122, 527)
+
+[node name="Flag" parent="." instance=ExtResource("3_inoq8")]
+position = Vector2(993, 527)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(512, 300)
