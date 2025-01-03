@@ -1,10 +1,25 @@
 [gd_scene load_steps=7 format=3 uid="uid://cpxrcesv2rsft"]
 
 [ext_resource type="Script" path="res://Environment/toy_soldier.gd" id="1_eccev"]
-[ext_resource type="Texture2D" uid="uid://cdjvuo0yftko6" path="res://Assets/SoldierAsset.png" id="2_604km"]
+[ext_resource type="Texture2D" uid="uid://xph3ueo7bfu" path="res://Assets/SoldierAsset.png" id="2_604km"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1yfa"]
 size = Vector2(8, 35)
+
+[sub_resource type="Animation" id="Animation_fneq8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_ucqby"]
 resource_name = "walking"
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 1]
-}
-
-[sub_resource type="Animation" id="Animation_fneq8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_35ia3"]
