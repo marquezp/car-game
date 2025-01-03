@@ -2,15 +2,16 @@ class_name MainMenu
 extends Control
 
 # Nav Buttons
-@onready var start_button: TextureButton = $MarginContainer/OptionsContainer/StartButton
-@onready var level_select_button: TextureButton = $MarginContainer/OptionsContainer/LevelSelectButton
-@onready var exit_button: TextureButton = $MarginContainer/OptionsContainer/ExitButton
+@onready var start_button: TextureButton = $OptionsContainer/StartButton
+@onready var level_select_button: TextureButton = $OptionsContainer/LevelSelectButton
+@onready var exit_button: TextureButton = $OptionsContainer/ExitButton
 
-@onready var back_button: Button = $BackButton
+@onready var back_button: TextureButton = $BackButton
 @onready var level_buttons_grid: GridContainer = $LevelSelectContainer/LevelButtonsGrid
+@onready var game_title: TextureRect = $GameTitle
 
 # Containers
-@onready var options_container: Control = $MarginContainer/OptionsContainer
+@onready var options_container: Control = $OptionsContainer
 @onready var level_select_container: Control = $LevelSelectContainer
 
 
@@ -42,6 +43,7 @@ func on_start_pressed():
 	SceneManager.change_level(start_level_path)
 
 func on_level_select_pressed():
+	game_title.visible = false
 	options_container.visible = false
 	level_select_container.visible = true
 	back_button.visible = true
@@ -104,6 +106,7 @@ func create_level_btn(lvl_name):
 	level_buttons_grid.add_child(btn)
 	
 func on_back_pressed():
+	game_title.visible = true
 	level_select_container.visible = false
 	back_button.visible = false
 	options_container.visible = true
