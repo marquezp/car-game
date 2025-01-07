@@ -6,15 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dnbrsksk30pwg" path="res://Assets/title.png" id="4_26if5"]
 [ext_resource type="PackedScene" uid="uid://dmutvoaprbadu" path="res://UI/Buttons/level_select_button.tscn" id="4_secd8"]
 [ext_resource type="PackedScene" uid="uid://3uj7gnuyafal" path="res://UI/Buttons/exit_button.tscn" id="5_ohsd3"]
-[ext_resource type="Texture2D" uid="uid://b5mkxo8takq40" path="res://Assets/Buttons/menuStuff.png" id="6_quc0w"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="7_yvmwu"]
+[ext_resource type="Texture2D" uid="uid://bvwvtvrg8t8og" path="res://Assets/Buttons/creditsBasic.png" id="8_v64b5"]
 [ext_resource type="Texture2D" uid="uid://df1m0l7w0am7j" path="res://Assets/levelText.png" id="9_7qsip"]
+[ext_resource type="Texture2D" uid="uid://tpkmvlgcn3a4" path="res://Assets/Buttons/creditsHighlight.png" id="9_va1eo"]
 [ext_resource type="Texture2D" uid="uid://dh6fbl2uhpc6j" path="res://Assets/Buttons/returnBasic.png" id="9_x6qwv"]
 [ext_resource type="Texture2D" uid="uid://clomw0qq3r2mo" path="res://Assets/Buttons/returnHighlight.png" id="10_qk6qh"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q8sqf"]
-atlas = ExtResource("6_quc0w")
-region = Rect2(161, 881, 202, 201)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c87de"]
 size = Vector2(1175, 75.5)
@@ -83,14 +80,15 @@ offset_right = 1242.19
 offset_bottom = 1039.0
 scale = Vector2(0.7, 0.7)
 
-[node name="Ball" type="TextureRect" parent="OptionsContainer"]
+[node name="Ball" type="TextureButton" parent="OptionsContainer"]
 layout_mode = 0
 offset_left = 617.297
 offset_top = 444.0
 offset_right = 819.297
 offset_bottom = 645.0
 scale = Vector2(0.7, 0.7)
-texture = SubResource("AtlasTexture_q8sqf")
+texture_normal = ExtResource("8_v64b5")
+texture_hover = ExtResource("9_va1eo")
 
 [node name="BackButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(50, 30)

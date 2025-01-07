@@ -1,8 +1,8 @@
 extends Control
 
-@onready var continue_button: Button = $HBoxContainer/VBoxContainer/ContinueButton
-@onready var restart_button: Button = $HBoxContainer/VBoxContainer/RestartButton
-@onready var main_menu_button: Button = $HBoxContainer/VBoxContainer/MainMenuButton
+@onready var continue_button: TextureButton = $ContinueButton
+@onready var restart_button: TextureButton = $RestartButton
+@onready var main_menu_button: TextureButton = $MainMenuButton
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
