@@ -15,9 +15,6 @@ position = Vector2(-63, -23)
 [node name="Flag" parent="." instance=ExtResource("2_vow2u")]
 position = Vector2(874, 387)
 
-[node name="Car" parent="." instance=ExtResource("3_4cr4c")]
-position = Vector2(177, 530)
-
 [node name="BookStack" parent="." instance=ExtResource("10_wtawh")]
 position = Vector2(897, 503)
 scale = Vector2(10.64, 10.64)
@@ -35,3 +32,6 @@ frame = 3
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramp"]
 scale = Vector2(0.973772, 1.22267)
 polygon = PackedVector2Array(485.74, 388.495, 307.053, 467.012, 658.265, 467.012)
+
+[node name="Car" parent="." instance=ExtResource("3_4cr4c")]
+position = Vector2(177, 530)

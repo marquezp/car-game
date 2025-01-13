@@ -3,7 +3,7 @@ extends Node
 const FILE_BEGIN = "res://Levels/level"
 const MAIN_MENU_PATH = "res://UI/main_menu.tscn"
 const LEVEL_SELECT_PATH = "res://UI/level_select.tscn"
-@export var max_level: int = 4
+@export var max_level: int = 9
 
 var ui_is_ready : bool = false
 var pending_popup : bool = false
@@ -37,7 +37,6 @@ func on_level_complete() -> void:
 	input_enabled = false
 	var current_scene_file = get_tree().current_scene.scene_file_path
 	var next_level_number = current_scene_file.to_int() + 1
-	GameData.add_to_total()
 	
 	call_deferred("end_level_sequence")
 	
@@ -51,7 +50,7 @@ func on_level_complete() -> void:
 		call_deferred("change_level", next_level_path) # lets physics objects finish their process
 		
 	else: # Last level, game over
-		print("Game Over, Total Charges Used: " , GameData.total_score)
+		print("Game Over, Total Charges Used: " , GameData.charges_used)
 # 	
 func end_level_sequence():
 	var car = get_tree().current_scene.get_node("Car")
@@ -66,19 +65,16 @@ func show_level_select():
 	
 # Scene transitions
 func change_level(scene_path):
-	GameData.charges_used = 0
 	ui_is_ready = false
 	get_tree().change_scene_to_file(scene_path)
 	pending_popup = true
 	input_enabled = true
 
 func reset_level():
-	GameData.charges_used = 0
 	get_tree().reload_current_scene()
 	
 func reset_game():
 	GameData.charges_used = 0
-	GameData.total_score = 0
 	get_tree().change_scene_to_file(MAIN_MENU_PATH)
 	
 func end_game():

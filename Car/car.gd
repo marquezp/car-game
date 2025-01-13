@@ -48,6 +48,7 @@ func move_car(charge):
 	is_car_moving = true
 	animation_player.stop()
 	GameData.increment_charges_used()
+	GameData.is_charging = false
 	
 func slow_down_car() -> void:
 	for wheel in wheels:
@@ -72,6 +73,7 @@ func _input(event):
 		if event is InputEventKey and event.keycode == KEY_SPACE and !is_car_moving:
 			if event.pressed and !selected:
 				selected = true # Start charging
+				GameData.is_charging = true
 			elif not event.pressed and selected:
 				selected = false # Stop charging
 				move_car(current_charge)
@@ -84,6 +86,7 @@ func _physics_process(delta: float) -> void:
 		current_charge = min(current_charge + (50 * delta), max_charge)
 		for wheel in wheels:
 			wheel.get_node("AnimationPlayer").play("charge_up")
+		
 
 	# Charge goes over limit
 	if current_charge >= max_charge:

@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cv70fssniyws5"]
+[gd_scene load_steps=10 format=3 uid="uid://cv70fssniyws5"]
 
 [ext_resource type="Script" path="res://Car/car.gd" id="1_k1ttg"]
 [ext_resource type="Texture2D" uid="uid://dh6bq1xa1pcpr" path="res://Assets/Car/CarAsset.png" id="2_mpqdl"]
 [ext_resource type="Texture2D" uid="uid://dvofja7c23i3l" path="res://Assets/Car/windupAssets.png" id="2_qner1"]
 [ext_resource type="PackedScene" uid="uid://cu13e2iqguwya" path="res://Wheel/wheel.tscn" id="3_hla4v"]
-[ext_resource type="Texture2D" uid="uid://r0u23da3iom8" path="res://Assets/Environment/speedometer.png" id="5_5oa0x"]
-[ext_resource type="Texture2D" uid="uid://b80rf8j1qdg3v" path="res://Assets/Environment/speedNeedle.png" id="6_sg6vq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2b31p"]
 
@@ -153,15 +151,3 @@ libraries = {
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-35, 16, -36, 6, -33, -3, -29, -4, -32, -10, -28, -10, -23, -9, -19, -7, -6, -16, 12, -18, 24, -15, 39, -7, 53, -3, 57, -2, 59, 2, 64, 7, 65, 12, 65, 16, 63, 18, 54, 18, 49, 9, 42, 6, 37, 6, 33, 8, 31, 11, 28, 16, 23, 18, 11, 18, -3, 17, -5, 10, -10, 6, -17, 6, -23, 9, -25, 12, -29, 17)
-
-[node name="PowerBar" type="Sprite2D" parent="."]
-position = Vector2(9.15, -67.775)
-scale = Vector2(0.55, 0.55)
-texture = ExtResource("5_5oa0x")
-
-[node name="PowerNeedle" type="Sprite2D" parent="."]
-position = Vector2(9.15, -64.775)
-rotation = -0.00872665
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_sg6vq")
-offset = Vector2(0, -32)

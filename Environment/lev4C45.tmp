@@ -1,0 +1,107 @@
+[gd_scene load_steps=16 format=3 uid="uid://cusdvax13dgwc"]
+
+[ext_resource type="Texture2D" uid="uid://c0vjv8nuvr4ou" path="res://Assets/Environment/backgroundBase.png" id="1_imqnd"]
+[ext_resource type="PackedScene" uid="uid://g510h064yyuf" path="res://UI/level_ui.tscn" id="3_ea8l3"]
+[ext_resource type="PackedScene" uid="uid://6bk5stt3oq5w" path="res://Environment/confetti.tscn" id="4_4pdov"]
+[ext_resource type="PackedScene" uid="uid://eisfbfnovsr3" path="res://UI/pause_menu.tscn" id="4_hah2y"]
+[ext_resource type="Texture2D" uid="uid://dnjcuauo2majh" path="res://Assets/chargesUsedText.png" id="5_bbfk0"]
+[ext_resource type="FontFile" uid="uid://bxesgtlqgapmv" path="res://Assets/customnumbers.ttf" id="6_311p5"]
+[ext_resource type="Script" path="res://Environment/charges_used_number.gd" id="7_84g0h"]
+[ext_resource type="Texture2D" uid="uid://r0u23da3iom8" path="res://Assets/Environment/speedometer.png" id="8_8lvqx"]
+[ext_resource type="Texture2D" uid="uid://b80rf8j1qdg3v" path="res://Assets/Environment/speedNeedle.png" id="9_3ih67"]
+[ext_resource type="Script" path="res://Environment/power_needle.gd" id="10_68ver"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07t6k"]
+size = Vector2(3494.88, 152.381)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdbni"]
+size = Vector2(1175, 75.5)
+
+[sub_resource type="FontVariation" id="FontVariation_jf42h"]
+base_font = ExtResource("6_311p5")
+
+[sub_resource type="Animation" id="Animation_242cc"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6nqdl"]
+_data = {
+"new_animation": SubResource("Animation_242cc")
+}
+
+[node name="LevelTemplate" type="Node2D"]
+
+[node name="WallPaper" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_imqnd")
+centered = false
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(768, 583)
+scale = Vector2(0.333, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-588, 76.619)
+shape = SubResource("RectangleShape2D_07t6k")
+
+[node name="LWall" type="StaticBody2D" parent="."]
+position = Vector2(-20, 251)
+scale = Vector2(0.0399976, 7.68)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LWall"]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_bdbni")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LevelUI" parent="UI" instance=ExtResource("3_ea8l3")]
+offset_top = -1.52588e-05
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("4_hah2y")]
+visible = false
+offset_left = 11.0
+offset_top = 141.0
+offset_right = 11.0
+offset_bottom = 141.0
+
+[node name="BottomConfetti" parent="." instance=ExtResource("4_4pdov")]
+position = Vector2(1172, 577)
+rotation = -1.19858
+scale = Vector2(6.50033, 6.50033)
+
+[node name="TopConfetti" parent="." instance=ExtResource("4_4pdov")]
+position = Vector2(42, -27)
+rotation = 2.68094
+scale = Vector2(5.58352, 5.58352)
+
+[node name="ChargesUsedText" type="Sprite2D" parent="."]
+position = Vector2(1047, 88)
+texture = ExtResource("5_bbfk0")
+
+[node name="ChargesUsedNumber" type="Label" parent="ChargesUsedText"]
+offset_left = -4.0
+offset_top = -53.0
+offset_right = 44.0
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(0.913725, 0.498039, 0.486275, 1)
+theme_override_fonts/font = SubResource("FontVariation_jf42h")
+theme_override_font_sizes/font_size = 40
+text = "0"
+script = ExtResource("7_84g0h")
+
+[node name="PowerBar" type="Sprite2D" parent="."]
+position = Vector2(127.25, 109.875)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("8_8lvqx")
+
+[node name="PowerNeedle" type="Sprite2D" parent="."]
+position = Vector2(126.1, 116.65)
+rotation = -1.5708
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("9_3ih67")
+offset = Vector2(0.137245, -24.7149)
+script = ExtResource("10_68ver")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6nqdl")
+}
