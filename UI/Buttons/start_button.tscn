@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://1visywspv7pq"]
 
-[ext_resource type="Texture2D" uid="uid://dyjast2fpim0w" path="res://Assets/Buttons/startBasic.png" id="1_jed6n"]
-[ext_resource type="Texture2D" uid="uid://rxoflf6dli27" path="res://Assets/Buttons/startHighlight.png" id="2_l1gx3"]
+[ext_resource type="Texture2D" uid="uid://dyjast2fpim0w" path="res://Assets/Buttons/menuButtons/startBasic.png" id="1_jed6n"]
+[ext_resource type="Texture2D" uid="uid://rxoflf6dli27" path="res://Assets/Buttons/menuButtons/startHighlight.png" id="2_l1gx3"]
 [ext_resource type="Script" path="res://UI/Buttons/texture_button.gd" id="3_wlxoy"]
 
 [node name="StartButton" type="TextureButton"]

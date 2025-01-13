@@ -35,6 +35,3 @@ loop = false
 
 [node name="ToySoldier" parent="Patrol/PathFollow2D" instance=ExtResource("4_32pwm")]
 scale = Vector2(2.96, 2.96)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(512, 300)

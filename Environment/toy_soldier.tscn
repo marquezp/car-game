@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cpxrcesv2rsft"]
 
 [ext_resource type="Script" path="res://Environment/toy_soldier.gd" id="1_eccev"]
-[ext_resource type="Texture2D" uid="uid://xph3ueo7bfu" path="res://Assets/SoldierAsset.png" id="2_604km"]
+[ext_resource type="Texture2D" uid="uid://xph3ueo7bfu" path="res://Assets/Environment/SoldierAsset.png" id="2_604km"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1yfa"]
 size = Vector2(8, 35)

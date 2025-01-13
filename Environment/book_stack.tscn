@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bp205iqfw5ykl"]
 
-[ext_resource type="Texture2D" uid="uid://dly5xqegjl77o" path="res://Assets/bookStacks.png" id="1_unitv"]
+[ext_resource type="Texture2D" uid="uid://dly5xqegjl77o" path="res://Assets/Environment/bookStacks.png" id="1_unitv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5aeea"]
 size = Vector2(420, 220)

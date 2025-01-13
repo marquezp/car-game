@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dh6bq1xa1pcpr" path="res://Assets/Car/CarAsset.png" id="2_mpqdl"]
 [ext_resource type="Texture2D" uid="uid://dvofja7c23i3l" path="res://Assets/Car/windupAssets.png" id="2_qner1"]
 [ext_resource type="PackedScene" uid="uid://cu13e2iqguwya" path="res://Wheel/wheel.tscn" id="3_hla4v"]
-[ext_resource type="Texture2D" uid="uid://r0u23da3iom8" path="res://Assets/speedometer.png" id="5_5oa0x"]
-[ext_resource type="Texture2D" uid="uid://b80rf8j1qdg3v" path="res://Assets/speedNeedle.png" id="6_sg6vq"]
+[ext_resource type="Texture2D" uid="uid://r0u23da3iom8" path="res://Assets/Environment/speedometer.png" id="5_5oa0x"]
+[ext_resource type="Texture2D" uid="uid://b80rf8j1qdg3v" path="res://Assets/Environment/speedNeedle.png" id="6_sg6vq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2b31p"]
 

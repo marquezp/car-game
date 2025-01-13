@@ -1,17 +1,17 @@
 [gd_scene load_steps=15 format=3 uid="uid://b5mxcamdvpfl3"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_32lnu"]
-[ext_resource type="Texture2D" uid="uid://c0vjv8nuvr4ou" path="res://Assets/backgroundBase.png" id="2_kl72j"]
+[ext_resource type="Texture2D" uid="uid://c0vjv8nuvr4ou" path="res://Assets/Environment/backgroundBase.png" id="2_kl72j"]
 [ext_resource type="PackedScene" uid="uid://1visywspv7pq" path="res://UI/Buttons/start_button.tscn" id="3_jvuqv"]
 [ext_resource type="Texture2D" uid="uid://dnbrsksk30pwg" path="res://Assets/title.png" id="4_26if5"]
 [ext_resource type="PackedScene" uid="uid://dmutvoaprbadu" path="res://UI/Buttons/level_select_button.tscn" id="4_secd8"]
 [ext_resource type="PackedScene" uid="uid://3uj7gnuyafal" path="res://UI/Buttons/exit_button.tscn" id="5_ohsd3"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="7_yvmwu"]
-[ext_resource type="Texture2D" uid="uid://bvwvtvrg8t8og" path="res://Assets/Buttons/creditsBasic.png" id="8_v64b5"]
-[ext_resource type="Texture2D" uid="uid://df1m0l7w0am7j" path="res://Assets/levelText.png" id="9_7qsip"]
-[ext_resource type="Texture2D" uid="uid://tpkmvlgcn3a4" path="res://Assets/Buttons/creditsHighlight.png" id="9_va1eo"]
-[ext_resource type="Texture2D" uid="uid://dh6fbl2uhpc6j" path="res://Assets/Buttons/returnBasic.png" id="9_x6qwv"]
-[ext_resource type="Texture2D" uid="uid://clomw0qq3r2mo" path="res://Assets/Buttons/returnHighlight.png" id="10_qk6qh"]
+[ext_resource type="Texture2D" uid="uid://bvwvtvrg8t8og" path="res://Assets/Buttons/menuButtons/creditsBasic.png" id="8_v64b5"]
+[ext_resource type="Texture2D" uid="uid://df1m0l7w0am7j" path="res://Assets/Environment/levelText.png" id="9_7qsip"]
+[ext_resource type="Texture2D" uid="uid://tpkmvlgcn3a4" path="res://Assets/Buttons/menuButtons/creditsHighlight.png" id="9_va1eo"]
+[ext_resource type="Texture2D" uid="uid://dh6fbl2uhpc6j" path="res://Assets/Buttons/menuButtons/returnBasic.png" id="9_x6qwv"]
+[ext_resource type="Texture2D" uid="uid://clomw0qq3r2mo" path="res://Assets/Buttons/menuButtons/returnHighlight.png" id="10_qk6qh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c87de"]
 size = Vector2(1175, 75.5)
