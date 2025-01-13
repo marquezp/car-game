@@ -71,7 +71,9 @@ func change_level(scene_path):
 	input_enabled = true
 
 func reset_level():
+	ui_is_ready = false
 	get_tree().reload_current_scene()
+	pending_popup = true
 	
 func reset_game():
 	GameData.charges_used = 0
