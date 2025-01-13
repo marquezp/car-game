@@ -1,15 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://cusdvax13dgwc"]
+[gd_scene load_steps=11 format=3 uid="uid://cusdvax13dgwc"]
 
 [ext_resource type="Texture2D" uid="uid://c0vjv8nuvr4ou" path="res://Assets/backgroundBase.png" id="1_imqnd"]
 [ext_resource type="PackedScene" uid="uid://g510h064yyuf" path="res://UI/level_ui.tscn" id="3_ea8l3"]
 [ext_resource type="PackedScene" uid="uid://6bk5stt3oq5w" path="res://Environment/confetti.tscn" id="4_4pdov"]
 [ext_resource type="PackedScene" uid="uid://eisfbfnovsr3" path="res://UI/pause_menu.tscn" id="4_hah2y"]
+[ext_resource type="Texture2D" uid="uid://dnjcuauo2majh" path="res://Assets/chargesUsedText.png" id="5_bbfk0"]
+[ext_resource type="FontFile" uid="uid://bxesgtlqgapmv" path="res://Assets/customnumbers.ttf" id="6_311p5"]
+[ext_resource type="Script" path="res://Environment/charges_used_number.gd" id="7_84g0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07t6k"]
 size = Vector2(3494.88, 152.381)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bdbni"]
 size = Vector2(1175, 75.5)
+
+[sub_resource type="FontVariation" id="FontVariation_jf42h"]
+base_font = ExtResource("6_311p5")
 
 [node name="LevelTemplate" type="Node2D"]
 
@@ -50,3 +56,18 @@ scale = Vector2(6.50033, 6.50033)
 position = Vector2(42, -27)
 rotation = 2.68094
 scale = Vector2(5.58352, 5.58352)
+
+[node name="ChargesUsedText" type="Sprite2D" parent="."]
+position = Vector2(1047, 88)
+texture = ExtResource("5_bbfk0")
+
+[node name="ChargesUsedNumber" type="Label" parent="ChargesUsedText"]
+offset_left = 2.0
+offset_top = -53.0
+offset_right = 18.0
+offset_bottom = -37.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0.913725, 0.498039, 0.486275, 1)
+theme_override_fonts/font = SubResource("FontVariation_jf42h")
+text = "0"
+script = ExtResource("7_84g0h")
