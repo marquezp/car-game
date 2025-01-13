@@ -1,10 +1,13 @@
 extends RigidBody2D
 @onready var car: RigidBody2D = $"."
 @onready var click_box: Area2D = $ClickBox
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+# Debug Labels
+@onready var moving_label: Label = $MovingLabel
 @onready var charge_up: Label = $ChargeUp
 @onready var charges_used: Label = $ChargesUsed
-@onready var moving_label: Label = $MovingLabel
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 const STOP_THRESHOLD = 34.1
 const STOP_FORCE = 0.85
