@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_fy75h"]
 [ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="2_wg744"]
-[ext_resource type="Texture2D" uid="uid://bdk6kumlmg3kb" path="res://Assets/Buttons/menuButtons/pauseButtonBase.png" id="3_58ghb"]
 [ext_resource type="Texture2D" uid="uid://cmxb5ssao4f6s" path="res://Assets/Buttons/menuButtons/continueBasic.png" id="3_coobp"]
 [ext_resource type="Texture2D" uid="uid://b4aj6ytkwxt6a" path="res://Assets/Environment/pauseMenuTitle.png" id="4_7j1t8"]
 [ext_resource type="Texture2D" uid="uid://cfawb4be0iti3" path="res://Assets/Buttons/menuButtons/continueHighlight.png" id="4_pjf0v"]
@@ -15,6 +14,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3212y"]
 shader = ExtResource("2_wg744")
 shader_parameter/lod = 0.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qghyt"]
+load_path = "res://.godot/imported/pauseButtonBase.png-4efbb5ef538bb86b981e009fb902475c.ctex"
 
 [sub_resource type="Animation" id="Animation_nmyrt"]
 length = 0.001
@@ -90,7 +92,7 @@ offset_top = 231.0
 offset_right = 2778.0
 offset_bottom = 1342.0
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_58ghb")
+texture = SubResource("CompressedTexture2D_qghyt")
 
 [node name="ContinueButton" type="TextureButton" parent="."]
 layout_mode = 2

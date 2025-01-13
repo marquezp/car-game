@@ -67,10 +67,7 @@ func get_levels(path):
 	else:
 		print("An error occurred when trying to access the path.")
 	buttons_list.sort()
-	# This is a quick workaround that would have to change if we add more than 10 levels
-	var level10 = buttons_list[1]
-	buttons_list.remove_at(1)
-	buttons_list.append(level10)
+	
 	for button in buttons_list:
 		create_level_btn(button)
 		

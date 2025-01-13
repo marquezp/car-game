@@ -67,12 +67,12 @@ position = Vector2(1047, 88)
 texture = ExtResource("5_bbfk0")
 
 [node name="ChargesUsedNumber" type="Label" parent="ChargesUsedText"]
-offset_left = 2.0
+offset_left = -4.0
 offset_top = -53.0
-offset_right = 18.0
-offset_bottom = -37.0
-scale = Vector2(2, 2)
+offset_right = 44.0
+offset_bottom = -5.0
 theme_override_colors/font_color = Color(0.913725, 0.498039, 0.486275, 1)
 theme_override_fonts/font = SubResource("FontVariation_jf42h")
+theme_override_font_sizes/font_size = 40
 text = "0"
 script = ExtResource("7_84g0h")
