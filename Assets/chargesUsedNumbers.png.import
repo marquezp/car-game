@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnjcuauo2majh"
-path="res://.godot/imported/chargesUsedText.png-182f2acc6814ee4932049aaa1a3a86e0.ctex"
+uid="uid://d1f2vvbxl0uv"
+path="res://.godot/imported/chargesUsedNumbers.png-18edf429d4720acee8bd01703f4ddcb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/chargesUsedText.png"
-dest_files=["res://.godot/imported/chargesUsedText.png-182f2acc6814ee4932049aaa1a3a86e0.ctex"]
+source_file="res://Assets/chargesUsedNumbers.png"
+dest_files=["res://.godot/imported/chargesUsedNumbers.png-18edf429d4720acee8bd01703f4ddcb1.ctex"]
 
 [params]
 

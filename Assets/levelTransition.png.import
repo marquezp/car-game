@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnjcuauo2majh"
-path="res://.godot/imported/chargesUsedText.png-182f2acc6814ee4932049aaa1a3a86e0.ctex"
+uid="uid://bnxp0i8ie1evq"
+path="res://.godot/imported/levelTransition.png-b5db55e9710f2425bd264ed2b43e4661.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/chargesUsedText.png"
-dest_files=["res://.godot/imported/chargesUsedText.png-182f2acc6814ee4932049aaa1a3a86e0.ctex"]
+source_file="res://Assets/levelTransition.png"
+dest_files=["res://.godot/imported/levelTransition.png-b5db55e9710f2425bd264ed2b43e4661.ctex"]
 
 [params]
 
