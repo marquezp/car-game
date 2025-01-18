@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b81tu4y5rsn82"
-path="res://.godot/imported/finishFlags.png-a110c41ae85772d18891b2f0e1e996ad.ctex"
+uid="uid://dy3ni4t477fp8"
+path="res://.godot/imported/startFlags.png-8020bc8edfecef22ad3f6b4a4e748fd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/finishFlags.png"
-dest_files=["res://.godot/imported/finishFlags.png-a110c41ae85772d18891b2f0e1e996ad.ctex"]
+source_file="res://Assets/startFlags.png"
+dest_files=["res://.godot/imported/startFlags.png-8020bc8edfecef22ad3f6b4a4e748fd2.ctex"]
 
 [params]
 
