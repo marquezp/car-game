@@ -5,7 +5,6 @@ extends Label
 func _ready() -> void:
 	self.text = str(GameData.get_charges_used())
 	GameData.score_changed.connect(update_text)
-
-
+	
 func update_text():
 	self.text = str(GameData.get_charges_used())

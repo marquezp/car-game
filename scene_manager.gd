@@ -2,6 +2,7 @@ extends Node
 
 const FILE_BEGIN = "res://Levels/level"
 const MAIN_MENU_PATH = "res://UI/main_menu.tscn"
+const END_SCREEN_PATH = "res://UI/end_screen.tscn"
 const LEVEL_SELECT_PATH = "res://UI/level_select.tscn"
 @export var max_level: int = 9
 
@@ -37,27 +38,24 @@ func on_level_complete() -> void:
 	input_enabled = false
 	var current_scene_file = get_tree().current_scene.scene_file_path
 	var next_level_number = current_scene_file.to_int() + 1
+	var next_level_path = FILE_BEGIN + str(next_level_number) + ".tscn"
 	
+	if next_level_number > max_level:
+		next_level_path = END_SCREEN_PATH
+		
 	call_deferred("end_level_sequence")
+	await get_tree().create_timer(2.0).timeout # wait until triggering next scene
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	
-	if next_level_number <= max_level:
-		var next_level_path = FILE_BEGIN + str(next_level_number) + ".tscn"
-		
-		await get_tree().create_timer(2.0).timeout # wait until triggering next scene
-		
-		TransitionScreen.transition()
-		await TransitionScreen.on_transition_finished
-		call_deferred("change_level", next_level_path) # lets physics objects finish their process
-		
-	else: # Last level, game over
-		print("Game Over, Total Charges Used: " , GameData.charges_used)
-# 	
+	call_deferred("change_level", next_level_path) # lets physics objects finish their process
+
 func end_level_sequence():
-	var car = get_tree().current_scene.get_node("Car")
 	var confetti_list = get_tree().get_nodes_in_group("confetti")
 	for color in confetti_list:
 		color.emitting = true
 	
+	var car = get_tree().current_scene.get_node("Car")
 	car.freeze_car() # stop movement
 
 func show_level_select():
@@ -78,6 +76,9 @@ func reset_level():
 func reset_game():
 	GameData.charges_used = 0
 	get_tree().change_scene_to_file(MAIN_MENU_PATH)
+
+func end_screen():
+	get_tree().change_scene_to_file(END_SCREEN_PATH)
 	
 func end_game():
 	get_tree().quit()

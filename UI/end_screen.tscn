@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://m7wjau6iefjn"]
+
+[ext_resource type="Texture2D" uid="uid://hlfgm3hse3tq" path="res://Assets/Environment/endScreen.png" id="1_3ydrn"]
+[ext_resource type="FontFile" uid="uid://bxesgtlqgapmv" path="res://Assets/customnumbers.ttf" id="2_aupf2"]
+[ext_resource type="Script" path="res://Environment/charges_used_number.gd" id="3_ykqqr"]
+
+[sub_resource type="FontVariation" id="FontVariation_oieyk"]
+base_font = ExtResource("2_aupf2")
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3ydrn")
+
+[node name="ChargesUsedNumber" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 70.0
+offset_right = 744.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.913725, 0.498039, 0.486275, 0.705882)
+theme_override_fonts/font = SubResource("FontVariation_oieyk")
+theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_ykqqr")
