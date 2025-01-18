@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co6fkpigt15yh"
-path="res://.godot/imported/StartFlag.png-497706c4fc54911f090200d6ad0eece5.ctex"
+uid="uid://dljv3v0abpcqr"
+path="res://.godot/imported/StartFlags.png-87cd8c6d1b89be7593a5f53c03e26342.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/StartFlag.png"
-dest_files=["res://.godot/imported/StartFlag.png-497706c4fc54911f090200d6ad0eece5.ctex"]
+source_file="res://Assets/Environment/StartFlags.png"
+dest_files=["res://.godot/imported/StartFlags.png-87cd8c6d1b89be7593a5f53c03e26342.ctex"]
 
 [params]
 
