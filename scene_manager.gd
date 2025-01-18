@@ -2,8 +2,10 @@ extends Node
 
 const FILE_BEGIN = "res://Levels/level"
 const MAIN_MENU_PATH = "res://UI/main_menu.tscn"
+const CREDITS_PATH = "res://UI/credits.tscn"
 const END_SCREEN_PATH = "res://UI/end_screen.tscn"
 const LEVEL_SELECT_PATH = "res://UI/level_select.tscn"
+
 @export var max_level: int = 9
 
 var ui_is_ready : bool = false
@@ -77,6 +79,9 @@ func reset_game():
 	GameData.charges_used = 0
 	get_tree().change_scene_to_file(MAIN_MENU_PATH)
 
+func credits():
+	get_tree().change_scene_to_file(CREDITS_PATH)
+	
 func end_screen():
 	get_tree().change_scene_to_file(END_SCREEN_PATH)
 	

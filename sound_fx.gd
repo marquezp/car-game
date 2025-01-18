@@ -7,10 +7,17 @@ func unpausing():
 	$GameTheme.bus = "Master"
 	
 func game_theme():
+	if $MainMenuTheme.playing:
+		$MainMenuTheme.stop()
+		
 	if !$GameTheme.playing:
 		$GameTheme.play()
 	else:
 		$GameTheme.stop()
+
+func main_menu_theme():
+	if !$MainMenuTheme.playing:
+		$MainMenuTheme.play()
 	
 func button_click():
 	$ButtonClick.play()

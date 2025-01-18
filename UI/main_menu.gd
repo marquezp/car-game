@@ -29,6 +29,7 @@ const button_sprites_path = "res://Assets/Buttons/levelButtons/"
 
 
 func _ready():
+	SoundFx.main_menu_theme()
 	get_levels(levels_folder)
 	level_select_container.visible = false
 	back_button.visible = false
@@ -58,6 +59,8 @@ func on_exit_pressed():
 
 func on_credits_pressed():
 	SoundFx.button_click()
+	SceneManager.credits()
+	
 # ------------------------------------------
 # LEVEL SELECT BUTTONS
 # Goes through the levels directory and gets all the levels
