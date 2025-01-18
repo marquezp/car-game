@@ -5,6 +5,7 @@ extends Control
 @onready var start_button: TextureButton = $OptionsContainer/StartButton
 @onready var level_select_button: TextureButton = $OptionsContainer/LevelSelectButton
 @onready var exit_button: TextureButton = $OptionsContainer/ExitButton
+@onready var credits_button: TextureButton = $OptionsContainer/CreditsButton
 
 @onready var back_button: TextureButton = $BackButton
 @onready var level_buttons_grid: GridContainer = $LevelSelectContainer/LevelButtonsGrid
@@ -34,15 +35,19 @@ func _ready():
 	back_button.button_down.connect(on_back_pressed)
 	start_button.button_down.connect(on_start_pressed)
 	exit_button.button_down.connect(on_exit_pressed)
+	credits_button.button_down.connect(on_credits_pressed)
 	level_select_button.button_down.connect(on_level_select_pressed)
 
 # MAIN OPTIONS BUTTONS ------------------
 func on_start_pressed():
+	SoundFx.button_click()
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	SceneManager.change_level(start_level_path)
+	SoundFx.game_theme()
 
 func on_level_select_pressed():
+	SoundFx.button_click()
 	game_title.visible = false
 	options_container.visible = false
 	level_select_container.visible = true
@@ -50,7 +55,9 @@ func on_level_select_pressed():
 	
 func on_exit_pressed():
 	SceneManager.end_game()
-	
+
+func on_credits_pressed():
+	SoundFx.button_click()
 # ------------------------------------------
 # LEVEL SELECT BUTTONS
 # Goes through the levels directory and gets all the levels
@@ -103,6 +110,7 @@ func create_level_btn(lvl_name):
 	level_buttons_grid.add_child(btn)
 	
 func on_back_pressed():
+	SoundFx.back_button_click()
 	game_title.visible = true
 	level_select_container.visible = false
 	back_button.visible = false

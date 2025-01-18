@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.3", "Mobile")
 GameData="*res://Car/game_data.tscn"
 TransitionScreen="*res://UI/transition_screen.tscn"
 SceneManager="*res://scene_manager.tscn"
+SoundFx="*res://sound_fx.tscn"
 
 [display]
 

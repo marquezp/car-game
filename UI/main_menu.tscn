@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5mxcamdvpfl3"]
+[gd_scene load_steps=18 format=3 uid="uid://b5mxcamdvpfl3"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_32lnu"]
 [ext_resource type="Texture2D" uid="uid://c0vjv8nuvr4ou" path="res://Assets/Environment/backgroundBase.png" id="2_kl72j"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://tpkmvlgcn3a4" path="res://Assets/Buttons/menuButtons/creditsHighlight.png" id="9_va1eo"]
 [ext_resource type="Texture2D" uid="uid://dh6fbl2uhpc6j" path="res://Assets/Buttons/menuButtons/returnBasic.png" id="9_x6qwv"]
 [ext_resource type="Texture2D" uid="uid://clomw0qq3r2mo" path="res://Assets/Buttons/menuButtons/returnHighlight.png" id="10_qk6qh"]
+[ext_resource type="Script" path="res://UI/Buttons/texture_button.gd" id="10_s1f4j"]
+[ext_resource type="AudioStream" uid="uid://tf1w6nk02u1i" path="res://Audio/MainMenuTheme.ogg" id="14_x8kal"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ail4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c87de"]
 size = Vector2(1175, 75.5)
@@ -47,6 +51,19 @@ offset_bottom = 1113.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_26if5")
 
+[node name="BackButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 39.0
+offset_top = 30.0
+offset_right = 503.0
+offset_bottom = 306.0
+scale = Vector2(0.36, 0.36)
+texture_normal = ExtResource("9_x6qwv")
+texture_hover = ExtResource("10_qk6qh")
+script = ExtResource("10_s1f4j")
+
 [node name="OptionsContainer" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -80,7 +97,7 @@ offset_right = 1242.19
 offset_bottom = 1039.0
 scale = Vector2(0.7, 0.7)
 
-[node name="Ball" type="TextureButton" parent="OptionsContainer"]
+[node name="CreditsButton" type="TextureButton" parent="OptionsContainer"]
 layout_mode = 0
 offset_left = 617.297
 offset_top = 444.0
@@ -89,18 +106,14 @@ offset_bottom = 645.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("8_v64b5")
 texture_hover = ExtResource("9_va1eo")
+script = ExtResource("10_s1f4j")
 
-[node name="BackButton" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(50, 30)
-layout_mode = 1
-anchors_preset = -1
-offset_left = 39.0
-offset_top = 30.0
-offset_right = 503.0
-offset_bottom = 306.0
-scale = Vector2(0.36, 0.36)
-texture_normal = ExtResource("9_x6qwv")
-texture_hover = ExtResource("10_qk6qh")
+[node name="StaticBody2D" type="StaticBody2D" parent="OptionsContainer/CreditsButton"]
+position = Vector2(107.02, 108.571)
+scale = Vector2(9.99023, 9.99023)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OptionsContainer/CreditsButton/StaticBody2D"]
+shape = SubResource("CircleShape2D_4ail4")
 
 [node name="LWall" type="StaticBody2D" parent="."]
 position = Vector2(-20, 251)
@@ -147,3 +160,8 @@ grow_vertical = 2
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 50
 columns = 3
+
+[node name="MainMenuTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_x8kal")
+volume_db = -20.0
+autoplay = true

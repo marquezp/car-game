@@ -13,14 +13,14 @@ position = Vector2(68, 23)
 position = Vector2(-67, -20)
 
 [node name="Flag" parent="." instance=ExtResource("3_682ff")]
-position = Vector2(1040, 526)
+position = Vector2(955, 533)
 
 [node name="Carpet" parent="." instance=ExtResource("4_xxqeh")]
-position = Vector2(677, 564)
+position = Vector2(634.8, 564.2)
 scale = Vector2(36.1065, 7.84116)
 
 [node name="CarpetSprite" type="Sprite2D" parent="."]
-position = Vector2(678, 554)
+position = Vector2(635.8, 554.2)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_v3w5n")
 

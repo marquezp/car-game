@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://drg0gahcnemkn"]
+
+[ext_resource type="Script" path="res://sound_fx.gd" id="1_6rwjx"]
+[ext_resource type="AudioStream" uid="uid://dhi3eehqqm5xq" path="res://Audio/buttonClick.wav" id="1_p7n41"]
+[ext_resource type="AudioStream" uid="uid://bgltdqwfrroco" path="res://Audio/backButtonClick.wav" id="3_ndt5p"]
+[ext_resource type="AudioStream" uid="uid://k3uk8yfjjf2p" path="res://Audio/buttonHover.wav" id="4_ayy21"]
+[ext_resource type="AudioStream" uid="uid://0x7tp5knuor2" path="res://Audio/GameTheme.ogg" id="5_utybq"]
+
+[node name="SoundFx" type="Node"]
+script = ExtResource("1_6rwjx")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_p7n41")
+volume_db = -2.0
+
+[node name="BackButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ndt5p")
+volume_db = -2.0
+
+[node name="LevelButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ayy21")
+volume_db = -8.0
+
+[node name="GameTheme" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("5_utybq")
+volume_db = -25.0

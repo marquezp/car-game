@@ -10,11 +10,14 @@ func _ready():
 	self.mouse_exited.connect(_on_mouse_exited)
 
 func _on_pressed():
+	SoundFx.button_click()
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	SceneManager.change_level(FILE_BEGIN + str(level) + ".tscn")
+	SoundFx.game_theme()
 	
 func _on_mouse_entered():
+	SoundFx.level_button_hover()
 	grow_btn(grow_size, .1)
 
 func _on_mouse_exited():

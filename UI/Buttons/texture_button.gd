@@ -1,6 +1,5 @@
 extends TextureButton
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if texture_normal:
@@ -12,3 +11,4 @@ func _ready() -> void:
 		bitmap.create_from_image_alpha(image)
 		# Assign it to the mask
 		texture_click_mask = bitmap
+		

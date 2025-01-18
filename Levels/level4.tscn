@@ -17,11 +17,11 @@ position = Vector2(68, 21)
 [node name="LevelTemplate" parent="." instance=ExtResource("1_1ciik")]
 position = Vector2(-66, -24)
 
-[node name="Car" parent="." instance=ExtResource("2_x0dsf")]
-position = Vector2(82, 528)
-
 [node name="Flag" parent="." instance=ExtResource("3_fos6k")]
 position = Vector2(730, 497)
+
+[node name="Car" parent="." instance=ExtResource("2_x0dsf")]
+position = Vector2(82, 528)
 
 [node name="Patrol" type="Path2D" parent="."]
 position = Vector2(-9, 32)
