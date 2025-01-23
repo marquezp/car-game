@@ -45,7 +45,14 @@ _data = {
 }
 
 [node name="ToySoldier" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_eccev")
+
+[node name="AreaCollider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaCollider"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_v1yfa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
@@ -53,12 +60,12 @@ texture = ExtResource("2_604km")
 flip_h = true
 hframes = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_v1yfa")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_35ia3")
 }
 autoplay = "walking"
+
+[node name="ToyCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_v1yfa")

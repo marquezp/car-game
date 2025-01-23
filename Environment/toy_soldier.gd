@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var area_collider: Area2D = $AreaCollider
 
 const SPEED = 80
 
@@ -8,6 +9,12 @@ var parent
 
 func _ready() -> void:
 	parent = get_parent()
+	area_collider.body_entered.connect(on_collision)
+	
+func on_collision(body):
+	if body.name == "Car":
+		print("Pushing back")
+		body.linear_velocity.x -= 800
 	
 func _physics_process(delta: float) -> void:
 	parent.progress += SPEED * delta * dir

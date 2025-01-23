@@ -1,11 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://m7wjau6iefjn"]
+[gd_scene load_steps=15 format=3 uid="uid://m7wjau6iefjn"]
 
 [ext_resource type="Texture2D" uid="uid://hlfgm3hse3tq" path="res://Assets/Environment/endScreen.png" id="1_3ydrn"]
-[ext_resource type="FontFile" uid="uid://bxesgtlqgapmv" path="res://Assets/customnumbers.ttf" id="2_aupf2"]
+[ext_resource type="Script" path="res://UI/end_screen.gd" id="1_dsui4"]
+[ext_resource type="FontFile" uid="uid://bxesgtlqgapmv" path="res://Assets/Fonts/customnumbers.ttf" id="2_aupf2"]
 [ext_resource type="Script" path="res://Environment/charges_used_number.gd" id="3_ykqqr"]
+[ext_resource type="Texture2D" uid="uid://bvwvtvrg8t8og" path="res://Assets/Buttons/menuButtons/creditsBasic.png" id="4_p43ou"]
+[ext_resource type="Texture2D" uid="uid://tpkmvlgcn3a4" path="res://Assets/Buttons/menuButtons/creditsHighlight.png" id="5_eyfnu"]
+[ext_resource type="Script" path="res://UI/Buttons/texture_button.gd" id="6_jrhg5"]
+[ext_resource type="Texture2D" uid="uid://bsltkyj84ocqc" path="res://Assets/Buttons/menuButtons/mainmenuBasic.png" id="8_180rq"]
+[ext_resource type="Texture2D" uid="uid://cemvehf8opuqn" path="res://Assets/Buttons/menuButtons/mainmenuHighlight.png" id="9_vq36l"]
 
 [sub_resource type="FontVariation" id="FontVariation_oieyk"]
 base_font = ExtResource("2_aupf2")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hdtn3"]
+radius = 69.1158
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fblnk"]
+radius = 24.0
+height = 220.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo84o"]
+size = Vector2(3494.88, 152.381)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6kea"]
+size = Vector2(102, 250.5)
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
@@ -16,6 +35,7 @@ offset_top = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dsui4")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -39,3 +59,72 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_ykqqr")
+
+[node name="CreditsBall" type="RigidBody2D" parent="."]
+position = Vector2(-788, -7)
+
+[node name="CreditsButton" type="TextureButton" parent="CreditsBall"]
+offset_left = 133.0
+offset_top = 412.0
+offset_right = 354.0
+offset_bottom = 634.0
+rotation = 0.523599
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("4_p43ou")
+texture_hover = ExtResource("5_eyfnu")
+script = ExtResource("6_jrhg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CreditsBall"]
+position = Vector2(160, 518)
+shape = SubResource("CircleShape2D_hdtn3")
+
+[node name="MainMenuBody" type="RigidBody2D" parent="."]
+position = Vector2(1332, 499)
+rotation = -2.61276
+mass = 100.0
+gravity_scale = 3.0
+
+[node name="MainMenuButton" type="TextureButton" parent="MainMenuBody"]
+offset_left = -96.5843
+offset_top = -48.13
+offset_right = 844.416
+offset_bottom = 206.87
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("8_180rq")
+texture_hover = ExtResource("9_vq36l")
+script = ExtResource("6_jrhg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainMenuBody"]
+position = Vector2(20.7411, -15.9624)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fblnk")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(-92, 583)
+scale = Vector2(0.333, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-588, 76.619)
+shape = SubResource("RectangleShape2D_lo84o")
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2(1075, 583)
+scale = Vector2(0.333, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+position = Vector2(-588, 76.619)
+shape = SubResource("RectangleShape2D_lo84o")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(104, 272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(160, 183)
+shape = SubResource("RectangleShape2D_d6kea")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(578, 274)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(160, 183)
+shape = SubResource("RectangleShape2D_d6kea")

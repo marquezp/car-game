@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://6bk5stt3oq5w" path="res://Environment/confetti.tscn" id="4_4pdov"]
 [ext_resource type="PackedScene" uid="uid://eisfbfnovsr3" path="res://UI/pause_menu.tscn" id="4_hah2y"]
 [ext_resource type="Texture2D" uid="uid://dnjcuauo2majh" path="res://Assets/chargesUsedText.png" id="5_bbfk0"]
-[ext_resource type="FontFile" uid="uid://bxesgtlqgapmv" path="res://Assets/customnumbers.ttf" id="6_311p5"]
+[ext_resource type="FontFile" uid="uid://bxesgtlqgapmv" path="res://Assets/Fonts/customnumbers.ttf" id="6_311p5"]
 [ext_resource type="Script" path="res://Environment/charges_used_number.gd" id="7_84g0h"]
 [ext_resource type="Texture2D" uid="uid://r0u23da3iom8" path="res://Assets/Environment/speedometer.png" id="8_8lvqx"]
 [ext_resource type="Texture2D" uid="uid://b80rf8j1qdg3v" path="res://Assets/Environment/speedNeedle.png" id="9_3ih67"]
@@ -238,11 +238,6 @@ shape = SubResource("RectangleShape2D_bdbni")
 offset_top = -1.52588e-05
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("4_hah2y")]
-visible = false
-offset_left = 11.0
-offset_top = 141.0
-offset_right = 11.0
-offset_bottom = 141.0
 
 [node name="BottomConfetti" parent="." instance=ExtResource("4_4pdov")]
 position = Vector2(1172, 577)
@@ -266,7 +261,7 @@ offset_bottom = -14.0
 theme_override_colors/font_color = Color(0.913725, 0.498039, 0.486275, 0.705882)
 theme_override_fonts/font = SubResource("FontVariation_s11xs")
 theme_override_font_sizes/font_size = 40
-text = "2"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_84g0h")

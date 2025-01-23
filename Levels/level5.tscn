@@ -1,20 +1,107 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnt7gmd4vb65o"]
+[gd_scene load_steps=7 format=3 uid="uid://cnt7gmd4vb65o"]
 
 [ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Environment/level_template.tscn" id="1_osd0k"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="2_pwhna"]
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="3_6g6qd"]
+[ext_resource type="PackedScene" uid="uid://bgjwylldd56ee" path="res://Environment/bed.tscn" id="3_nhv2x"]
+[ext_resource type="Texture2D" uid="uid://dly5xqegjl77o" path="res://Assets/Environment/bookStacks.png" id="5_0nway"]
 
-[node name="Level1" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t71o"]
+size = Vector2(88.7146, 21.2273)
+
+[node name="Level5" type="Node2D"]
 position = Vector2(68, 25)
 
 [node name="LevelTemplate" parent="." instance=ExtResource("1_osd0k")]
 position = Vector2(-65, -26)
 
-[node name="Car" parent="." instance=ExtResource("2_pwhna")]
-position = Vector2(122, 527)
-
 [node name="Flag" parent="." instance=ExtResource("3_6g6qd")]
-position = Vector2(993, 527)
+position = Vector2(951, 522)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(512, 300)
+
+[node name="Bed" parent="." instance=ExtResource("3_nhv2x")]
+position = Vector2(260, 485)
+scale = Vector2(1.2, 1.2)
+
+[node name="Car" parent="." instance=ExtResource("2_pwhna")]
+position = Vector2(38, 434)
+
+[node name="FallingBooks" type="Node" parent="."]
+
+[node name="Book1" type="RigidBody2D" parent="FallingBooks"]
+position = Vector2(113, -9947)
+rotation = -0.542797
+mass = 5.0
+gravity_scale = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="FallingBooks/Book1"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_0nway")
+region_enabled = true
+region_rect = Rect2(44, 44, 417, 101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingBooks/Book1"]
+position = Vector2(-2.14111, -1.29004)
+shape = SubResource("RectangleShape2D_3t71o")
+
+[node name="Book2" type="RigidBody2D" parent="FallingBooks"]
+position = Vector2(220, -10047)
+rotation = -1.42942
+mass = 5.0
+gravity_scale = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="FallingBooks/Book2"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_0nway")
+region_enabled = true
+region_rect = Rect2(71, 208, 408, 84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingBooks/Book2"]
+shape = SubResource("RectangleShape2D_3t71o")
+
+[node name="Book3" type="RigidBody2D" parent="FallingBooks"]
+position = Vector2(323, -10188)
+rotation = 0.640536
+mass = 5.0
+gravity_scale = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="FallingBooks/Book3"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_0nway")
+region_enabled = true
+region_rect = Rect2(21, 370, 487, 126)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingBooks/Book3"]
+position = Vector2(-2.22913, 0)
+shape = SubResource("RectangleShape2D_3t71o")
+
+[node name="Book4" type="RigidBody2D" parent="FallingBooks"]
+position = Vector2(222, -10273)
+rotation = -2.11708
+mass = 5.0
+gravity_scale = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="FallingBooks/Book4"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_0nway")
+region_enabled = true
+region_rect = Rect2(63, 918, 395, 95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingBooks/Book4"]
+shape = SubResource("RectangleShape2D_3t71o")
+
+[node name="BookBridge" type="StaticBody2D" parent="."]
+position = Vector2(662, 551)
+rotation = 0.492183
+
+[node name="Sprite2D" type="Sprite2D" parent="BookBridge"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_0nway")
+region_enabled = true
+region_rect = Rect2(44, 44, 417, 101)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BookBridge"]
+position = Vector2(0.969946, -0.243571)
+polygon = PackedVector2Array(-83.9374, -18.0968, 81.9565, -18.5239, 81.5151, 20.7674, -82.4391, 20.7073, -97.5284, -12.6593)

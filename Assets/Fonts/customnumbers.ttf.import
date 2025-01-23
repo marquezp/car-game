@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bxesgtlqgapmv"
-path="res://.godot/imported/customnumbers.ttf-b225e681aac0dda96f1f3466361c3707.fontdata"
+path="res://.godot/imported/customnumbers.ttf-ab900416985a398dfba57709e78513e2.fontdata"
 
 [deps]
 
-source_file="res://Assets/customnumbers.ttf"
-dest_files=["res://.godot/imported/customnumbers.ttf-b225e681aac0dda96f1f3466361c3707.fontdata"]
+source_file="res://Assets/Fonts/customnumbers.ttf"
+dest_files=["res://.godot/imported/customnumbers.ttf-ab900416985a398dfba57709e78513e2.fontdata"]
 
 [params]
 

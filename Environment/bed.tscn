@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgjwylldd56ee"]
+
+[ext_resource type="Texture2D" uid="uid://cc80au3fkuy5c" path="res://Assets/Environment/bedAsset.png" id="1_23vx1"]
+[ext_resource type="PackedScene" uid="uid://bun32233l0ftl" path="res://Environment/carpet.tscn" id="2_2ff8h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gouai"]
+size = Vector2(437, 37.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3wlj"]
+size = Vector2(306.25, 110)
+
+[node name="Bed" type="StaticBody2D"]
+
+[node name="Bed" type="Sprite2D" parent="."]
+position = Vector2(-8.99998, 4.00001)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_23vx1")
+
+[node name="Carpet" parent="Bed" instance=ExtResource("2_2ff8h")]
+position = Vector2(6.42858, -39.4286)
+scale = Vector2(36.8, 4.75732)
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.39996)
+shape = SubResource("RectangleShape2D_gouai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(114.875, 57)
+shape = SubResource("RectangleShape2D_s3wlj")

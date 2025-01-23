@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UI/level_ui.gd" id="1_23bgj"]
 [ext_resource type="Texture2D" uid="uid://bnxp0i8ie1evq" path="res://Assets/levelTransition.png" id="2_c7kv6"]
-[ext_resource type="FontFile" uid="uid://bxesgtlqgapmv" path="res://Assets/customnumbers.ttf" id="3_j6prn"]
+[ext_resource type="FontFile" uid="uid://bxesgtlqgapmv" path="res://Assets/Fonts/customnumbers.ttf" id="3_j6prn"]
 
 [sub_resource type="FontVariation" id="FontVariation_d647v"]
 base_font = ExtResource("3_j6prn")

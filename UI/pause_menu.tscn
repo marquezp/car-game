@@ -78,28 +78,28 @@ mouse_filter = 2
 
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 387.0
-offset_top = 21.0
-offset_right = 1999.0
-offset_bottom = 557.0
+offset_left = 395.0
+offset_top = 181.0
+offset_right = 2007.0
+offset_bottom = 717.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_7j1t8")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 227.0
-offset_top = 231.0
-offset_right = 2778.0
-offset_bottom = 1342.0
+offset_left = 228.0
+offset_top = 375.0
+offset_right = 2779.0
+offset_bottom = 1486.0
 scale = Vector2(0.25, 0.25)
 texture = SubResource("CompressedTexture2D_qghyt")
 
 [node name="ContinueButton" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 373.0
-offset_top = 329.0
-offset_right = 1252.0
-offset_bottom = 494.0
+offset_left = 374.0
+offset_top = 473.0
+offset_right = 1253.0
+offset_bottom = 638.0
 scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("3_coobp")
 texture_hover = ExtResource("4_pjf0v")
@@ -107,10 +107,10 @@ script = ExtResource("6_aju4r")
 
 [node name="MainMenuButton" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 473.0
-offset_top = 411.0
-offset_right = 1414.0
-offset_bottom = 666.0
+offset_left = 474.0
+offset_top = 555.0
+offset_right = 1415.0
+offset_bottom = 810.0
 scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("7_6sipo")
 texture_hover = ExtResource("8_ovieb")
@@ -118,10 +118,10 @@ script = ExtResource("6_aju4r")
 
 [node name="RestartButton" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 614.0
-offset_top = 347.0
-offset_right = 1493.0
-offset_bottom = 844.0
+offset_left = 615.0
+offset_top = 491.0
+offset_right = 1494.0
+offset_bottom = 988.0
 scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("5_wmou2")
 texture_hover = ExtResource("6_dxxyp")
