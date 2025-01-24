@@ -38,6 +38,8 @@ func _ready():
 	exit_button.button_down.connect(on_exit_pressed)
 	credits_button.button_down.connect(on_credits_pressed)
 	level_select_button.button_down.connect(on_level_select_pressed)
+	
+	car.linear_velocity.x += 300
 
 # MAIN OPTIONS BUTTONS ------------------
 func on_start_pressed():

@@ -14,7 +14,7 @@ size = Vector2(88.7146, 21.2273)
 
 [sub_resource type="Curve2D" id="Curve2D_on007"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 604, 472, 0, 0, 0, 0, 751, 473)
+"points": PackedVector2Array(0, 0, 0, 0, 557, 472, 0, 0, 0, 0, 751, 473)
 }
 point_count = 2
 
@@ -102,8 +102,8 @@ region_rect = Rect2(63, 918, 395, 95)
 shape = SubResource("RectangleShape2D_3t71o")
 
 [node name="BookBridge" type="StaticBody2D" parent="."]
-position = Vector2(662, 551)
-rotation = 0.492183
+position = Vector2(663, 521)
+rotation = 3.45052
 
 [node name="Sprite2D" type="Sprite2D" parent="BookBridge"]
 scale = Vector2(0.4, 0.4)
@@ -113,14 +113,15 @@ region_rect = Rect2(44, 44, 417, 101)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BookBridge"]
 position = Vector2(0.969946, -0.243571)
-polygon = PackedVector2Array(-83.9374, -18.0968, 81.9565, -18.5239, 81.5151, 20.7674, -82.4391, 20.7073, -97.5284, -12.6593)
+rotation = 3.14159
+polygon = PackedVector2Array(-75.9664, -20.9587, 81.9565, -18.5239, 81.5151, 20.7674, -80.6083, 20.411, -97.1072, -24.7087)
 
 [node name="Patrol" type="Path2D" parent="."]
 position = Vector2(-22, 63)
 curve = SubResource("Curve2D_on007")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Patrol"]
-position = Vector2(604, 472)
+position = Vector2(557, 472)
 rotates = false
 cubic_interp = false
 loop = false

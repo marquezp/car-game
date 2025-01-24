@@ -39,7 +39,7 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_kl72j")
 
 [node name="Car" parent="." instance=ExtResource("7_yvmwu")]
-position = Vector2(95, 551)
+position = Vector2(207, 551)
 
 [node name="GameTitle" type="TextureRect" parent="."]
 layout_mode = 0
@@ -123,7 +123,7 @@ position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_c87de")
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(768, 583)
+position = Vector2(328, 583)
 scale = Vector2(0.333, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
