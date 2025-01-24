@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dttqvg7ic4up6"]
+[gd_scene load_steps=9 format=3 uid="uid://dttqvg7ic4up6"]
 
 [ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Environment/level_template.tscn" id="1_wlatf"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="2_fxytt"]
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="3_w24oi"]
+[ext_resource type="PackedScene" uid="uid://cn427b68t443r" path="res://Environment/chair.tscn" id="4_ilm2m"]
+[ext_resource type="Texture2D" uid="uid://dly5xqegjl77o" path="res://Assets/Environment/bookStacks.png" id="5_cywpa"]
+[ext_resource type="PackedScene" uid="uid://cpxrcesv2rsft" path="res://Environment/toy_soldier.tscn" id="6_dr4lq"]
+
+[sub_resource type="Curve2D" id="Curve2D_f01q8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 897, 569, 0, 0, 0, 0, 1179, 481)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_meqyi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 331, 514, 0, 0, 0, 0, 165, 518)
+}
+point_count = 2
 
 [node name="Level1" type="Node2D"]
 position = Vector2(68, 25)
@@ -10,8 +25,54 @@ position = Vector2(68, 25)
 [node name="LevelTemplate" parent="." instance=ExtResource("1_wlatf")]
 position = Vector2(-65, -26)
 
-[node name="Car" parent="." instance=ExtResource("2_fxytt")]
-position = Vector2(122, 527)
-
 [node name="Flag" parent="." instance=ExtResource("3_w24oi")]
-position = Vector2(993, 527)
+position = Vector2(957, 523)
+
+[node name="Ramp" type="StaticBody2D" parent="."]
+position = Vector2(-64, 157)
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ramp"]
+position = Vector2(470, 522)
+scale = Vector2(0.67999, 0.67999)
+texture = ExtResource("5_cywpa")
+vframes = 8
+frame = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ramp"]
+scale = Vector2(0.973772, 1.22267)
+polygon = PackedVector2Array(485.74, 388.495, 307.053, 467.012, 658.265, 467.012)
+
+[node name="Chair" parent="." instance=ExtResource("4_ilm2m")]
+position = Vector2(393, 443)
+scale = Vector2(0.7, 0.7)
+
+[node name="Car" parent="." instance=ExtResource("2_fxytt")]
+position = Vector2(4, 526)
+
+[node name="Patrol" type="Path2D" parent="."]
+position = Vector2(-65, 3)
+curve = SubResource("Curve2D_f01q8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Patrol"]
+position = Vector2(897, 569)
+rotates = false
+cubic_interp = false
+loop = false
+
+[node name="ToySoldier" parent="Patrol/PathFollow2D" instance=ExtResource("6_dr4lq")]
+scale = Vector2(3.5, 3.5)
+
+[node name="Patrol2" type="Path2D" parent="."]
+position = Vector2(-9, 32)
+curve = SubResource("Curve2D_meqyi")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Patrol2"]
+position = Vector2(331, 514)
+scale = Vector2(-1, 1)
+rotates = false
+cubic_interp = false
+loop = false
+
+[node name="ToySoldier" parent="Patrol2/PathFollow2D" instance=ExtResource("6_dr4lq")]
+scale = Vector2(3.5, 3.5)

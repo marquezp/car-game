@@ -238,6 +238,7 @@ shape = SubResource("RectangleShape2D_bdbni")
 offset_top = -1.52588e-05
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("4_hah2y")]
+visible = false
 
 [node name="BottomConfetti" parent="." instance=ExtResource("4_4pdov")]
 position = Vector2(1172, 577)

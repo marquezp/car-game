@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://eybshl5aijmx"]
+[gd_scene load_steps=9 format=3 uid="uid://eybshl5aijmx"]
 
 [ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Environment/level_template.tscn" id="1_dompn"]
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="2_vow2u"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="3_4cr4c"]
 [ext_resource type="Texture2D" uid="uid://dly5xqegjl77o" path="res://Assets/Environment/bookStacks.png" id="5_d8n85"]
+[ext_resource type="Texture2D" uid="uid://df1m0l7w0am7j" path="res://Assets/Environment/levelText.png" id="6_ko78x"]
+[ext_resource type="FontFile" uid="uid://d1edl8ysatjju" path="res://Assets/Fonts/chalkboard.ttf" id="7_vnydb"]
 [ext_resource type="PackedScene" uid="uid://bp205iqfw5ykl" path="res://Environment/book_stack.tscn" id="10_wtawh"]
+
+[sub_resource type="FontVariation" id="FontVariation_ni78x"]
+base_font = ExtResource("7_vnydb")
 
 [node name="Level3" type="Node2D"]
 position = Vector2(65, 25)
@@ -35,3 +40,33 @@ polygon = PackedVector2Array(485.74, 388.495, 307.053, 467.012, 658.265, 467.012
 
 [node name="Car" parent="." instance=ExtResource("3_4cr4c")]
 position = Vector2(177, 530)
+
+[node name="InstructionsBackground" type="TextureRect" parent="."]
+offset_left = 138.0
+offset_top = -61.0
+offset_right = 1693.0
+offset_bottom = 641.0
+scale = Vector2(0.459999, 0.459999)
+texture = ExtResource("6_ko78x")
+
+[node name="TextureRect" type="ColorRect" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 246.0
+offset_right = 1356.0
+offset_bottom = 508.0
+color = Color(0.941176, 0.933333, 0.905882, 1)
+
+[node name="Controls" type="Label" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 36.9566
+offset_top = 228.261
+offset_right = 1475.96
+offset_bottom = 513.261
+theme_override_colors/font_color = Color(0.847059, 0.305882, 0.392157, 0.529412)
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = SubResource("FontVariation_ni78x")
+theme_override_font_sizes/font_size = 100
+text = "If you're ever in a jam, reset the level
+in the pause menu (Esc)."
+horizontal_alignment = 1

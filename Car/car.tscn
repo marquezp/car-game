@@ -74,6 +74,7 @@ _data = {
 }
 
 [node name="Car" type="RigidBody2D"]
+mass = 1.2
 physics_material_override = SubResource("PhysicsMaterial_2b31p")
 script = ExtResource("1_k1ttg")
 

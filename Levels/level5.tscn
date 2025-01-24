@@ -1,13 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnt7gmd4vb65o"]
+[gd_scene load_steps=12 format=3 uid="uid://cnt7gmd4vb65o"]
 
 [ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Environment/level_template.tscn" id="1_osd0k"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="2_pwhna"]
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="3_6g6qd"]
 [ext_resource type="PackedScene" uid="uid://bgjwylldd56ee" path="res://Environment/bed.tscn" id="3_nhv2x"]
 [ext_resource type="Texture2D" uid="uid://dly5xqegjl77o" path="res://Assets/Environment/bookStacks.png" id="5_0nway"]
+[ext_resource type="PackedScene" uid="uid://cpxrcesv2rsft" path="res://Environment/toy_soldier.tscn" id="6_woxgv"]
+[ext_resource type="Texture2D" uid="uid://df1m0l7w0am7j" path="res://Assets/Environment/levelText.png" id="7_a7q4y"]
+[ext_resource type="FontFile" uid="uid://d1edl8ysatjju" path="res://Assets/Fonts/chalkboard.ttf" id="8_xwjba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3t71o"]
 size = Vector2(88.7146, 21.2273)
+
+[sub_resource type="Curve2D" id="Curve2D_on007"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 604, 472, 0, 0, 0, 0, 751, 473)
+}
+point_count = 2
+
+[sub_resource type="FontVariation" id="FontVariation_xco6k"]
+base_font = ExtResource("8_xwjba")
 
 [node name="Level5" type="Node2D"]
 position = Vector2(68, 25)
@@ -18,20 +30,17 @@ position = Vector2(-65, -26)
 [node name="Flag" parent="." instance=ExtResource("3_6g6qd")]
 position = Vector2(951, 522)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(512, 300)
-
 [node name="Bed" parent="." instance=ExtResource("3_nhv2x")]
-position = Vector2(260, 485)
+position = Vector2(258, 446)
 scale = Vector2(1.2, 1.2)
 
 [node name="Car" parent="." instance=ExtResource("2_pwhna")]
-position = Vector2(38, 434)
+position = Vector2(45, 397)
 
 [node name="FallingBooks" type="Node" parent="."]
 
 [node name="Book1" type="RigidBody2D" parent="FallingBooks"]
-position = Vector2(113, -9947)
+position = Vector2(159, -11977)
 rotation = -0.542797
 mass = 5.0
 gravity_scale = 1.5
@@ -47,7 +56,7 @@ position = Vector2(-2.14111, -1.29004)
 shape = SubResource("RectangleShape2D_3t71o")
 
 [node name="Book2" type="RigidBody2D" parent="FallingBooks"]
-position = Vector2(220, -10047)
+position = Vector2(266, -12077)
 rotation = -1.42942
 mass = 5.0
 gravity_scale = 1.5
@@ -62,7 +71,7 @@ region_rect = Rect2(71, 208, 408, 84)
 shape = SubResource("RectangleShape2D_3t71o")
 
 [node name="Book3" type="RigidBody2D" parent="FallingBooks"]
-position = Vector2(323, -10188)
+position = Vector2(369, -12218)
 rotation = 0.640536
 mass = 5.0
 gravity_scale = 1.5
@@ -78,7 +87,7 @@ position = Vector2(-2.22913, 0)
 shape = SubResource("RectangleShape2D_3t71o")
 
 [node name="Book4" type="RigidBody2D" parent="FallingBooks"]
-position = Vector2(222, -10273)
+position = Vector2(268, -12303)
 rotation = -2.11708
 mass = 5.0
 gravity_scale = 1.5
@@ -105,3 +114,43 @@ region_rect = Rect2(44, 44, 417, 101)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BookBridge"]
 position = Vector2(0.969946, -0.243571)
 polygon = PackedVector2Array(-83.9374, -18.0968, 81.9565, -18.5239, 81.5151, 20.7674, -82.4391, 20.7073, -97.5284, -12.6593)
+
+[node name="Patrol" type="Path2D" parent="."]
+position = Vector2(-22, 63)
+curve = SubResource("Curve2D_on007")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Patrol"]
+position = Vector2(604, 472)
+rotates = false
+cubic_interp = false
+loop = false
+
+[node name="ToySoldier" parent="Patrol/PathFollow2D" instance=ExtResource("6_woxgv")]
+scale = Vector2(4, 4)
+
+[node name="InstructionsBackground" type="TextureRect" parent="."]
+offset_left = 136.0
+offset_top = 14.0
+offset_right = 1691.0
+offset_bottom = 716.0
+scale = Vector2(0.260001, 0.260001)
+texture = ExtResource("7_a7q4y")
+
+[node name="TextureRect" type="ColorRect" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 246.0
+offset_right = 1356.0
+offset_bottom = 508.0
+color = Color(0.941176, 0.933333, 0.905882, 1)
+
+[node name="Controls" type="Label" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 376.47
+offset_top = 264.706
+offset_right = 1114.47
+offset_bottom = 477.706
+theme_override_colors/font_color = Color(0.847059, 0.305882, 0.392157, 0.529412)
+theme_override_fonts/font = SubResource("FontVariation_xco6k")
+theme_override_font_sizes/font_size = 180
+text = "Better hurry..."

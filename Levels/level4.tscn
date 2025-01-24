@@ -1,15 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdf7mv7pkrpmh"]
+[gd_scene load_steps=11 format=3 uid="uid://bdf7mv7pkrpmh"]
 
 [ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Environment/level_template.tscn" id="1_1ciik"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="2_x0dsf"]
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="3_fos6k"]
 [ext_resource type="PackedScene" uid="uid://cpxrcesv2rsft" path="res://Environment/toy_soldier.tscn" id="4_32pwm"]
+[ext_resource type="PackedScene" uid="uid://cn427b68t443r" path="res://Environment/chair.tscn" id="5_3vigr"]
+[ext_resource type="PackedScene" uid="uid://bp205iqfw5ykl" path="res://Environment/book_stack.tscn" id="6_4u2co"]
+[ext_resource type="Texture2D" uid="uid://df1m0l7w0am7j" path="res://Assets/Environment/levelText.png" id="7_p4cgm"]
+[ext_resource type="FontFile" uid="uid://d1edl8ysatjju" path="res://Assets/Fonts/chalkboard.ttf" id="8_kwtpj"]
 
 [sub_resource type="Curve2D" id="Curve2D_06vw8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 660, 489, 0, 0, 0, 0, 788, 488)
+"points": PackedVector2Array(0, 0, 0, 0, 528, 573, 0, 0, 0, 0, 771, 485)
 }
 point_count = 2
+
+[sub_resource type="FontVariation" id="FontVariation_qt26t"]
+base_font = ExtResource("8_kwtpj")
 
 [node name="Level4" type="Node2D"]
 position = Vector2(68, 21)
@@ -18,7 +25,15 @@ position = Vector2(68, 21)
 position = Vector2(-66, -24)
 
 [node name="Flag" parent="." instance=ExtResource("3_fos6k")]
-position = Vector2(730, 497)
+position = Vector2(755, 497)
+
+[node name="Chair" parent="." instance=ExtResource("5_3vigr")]
+position = Vector2(961, 458)
+scale = Vector2(0.7, 0.7)
+
+[node name="BookStack" parent="Chair" instance=ExtResource("6_4u2co")]
+position = Vector2(-7.14277, -18.5714)
+scale = Vector2(5, 5)
 
 [node name="Car" parent="." instance=ExtResource("2_x0dsf")]
 position = Vector2(82, 528)
@@ -28,10 +43,37 @@ position = Vector2(-9, 32)
 curve = SubResource("Curve2D_06vw8")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Patrol"]
-position = Vector2(660, 489)
+position = Vector2(528, 573)
 rotates = false
 cubic_interp = false
 loop = false
 
 [node name="ToySoldier" parent="Patrol/PathFollow2D" instance=ExtResource("4_32pwm")]
 scale = Vector2(4, 4)
+
+[node name="InstructionsBackground" type="TextureRect" parent="."]
+offset_left = 305.0
+offset_top = 246.0
+offset_right = 1860.0
+offset_bottom = 948.0
+scale = Vector2(0.180002, 0.180002)
+texture = ExtResource("7_p4cgm")
+
+[node name="TextureRect" type="ColorRect" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 246.0
+offset_right = 1356.0
+offset_bottom = 508.0
+color = Color(0.941176, 0.933333, 0.905882, 1)
+
+[node name="Controls" type="Label" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 311.108
+offset_top = 238.886
+offset_right = 1465.11
+offset_bottom = 521.886
+theme_override_colors/font_color = Color(0.847059, 0.305882, 0.392157, 0.529412)
+theme_override_fonts/font = SubResource("FontVariation_qt26t")
+theme_override_font_sizes/font_size = 200
+text = "Timing is crucial..."

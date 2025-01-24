@@ -6,7 +6,7 @@ const CREDITS_PATH = "res://UI/credits.tscn"
 const END_SCREEN_PATH = "res://UI/end_screen.tscn"
 const LEVEL_SELECT_PATH = "res://UI/level_select.tscn"
 
-@export var max_level: int = 9
+@export var max_level: int = 6
 
 var ui_is_ready : bool = false
 var pending_popup : bool = false

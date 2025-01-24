@@ -19,6 +19,7 @@ texture = ExtResource("1_23vx1")
 [node name="Carpet" parent="Bed" instance=ExtResource("2_2ff8h")]
 position = Vector2(6.42858, -39.4286)
 scale = Vector2(36.8, 4.75732)
+damping_factor = 0.92
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.39996)

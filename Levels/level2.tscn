@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj1j1yc8rrevm"]
+[gd_scene load_steps=9 format=3 uid="uid://bj1j1yc8rrevm"]
 
 [ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Environment/level_template.tscn" id="1_2dr54"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="2_ocbo8"]
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="3_682ff"]
 [ext_resource type="Texture2D" uid="uid://chngn02cf8fe2" path="res://Assets/Environment/carpet1.png" id="4_v3w5n"]
 [ext_resource type="PackedScene" uid="uid://bun32233l0ftl" path="res://Environment/carpet.tscn" id="4_xxqeh"]
+[ext_resource type="Texture2D" uid="uid://df1m0l7w0am7j" path="res://Assets/Environment/levelText.png" id="6_2uuem"]
+[ext_resource type="FontFile" uid="uid://d1edl8ysatjju" path="res://Assets/Fonts/chalkboard.ttf" id="7_cifdb"]
+
+[sub_resource type="FontVariation" id="FontVariation_6plws"]
+base_font = ExtResource("7_cifdb")
 
 [node name="Level2" type="Node2D"]
 position = Vector2(68, 23)
@@ -26,3 +31,30 @@ texture = ExtResource("4_v3w5n")
 
 [node name="Car" parent="." instance=ExtResource("2_ocbo8")]
 position = Vector2(107, 530)
+
+[node name="InstructionsBackground" type="TextureRect" parent="."]
+offset_left = 305.0
+offset_top = 246.0
+offset_right = 1860.0
+offset_bottom = 948.0
+scale = Vector2(0.300001, 0.300001)
+texture = ExtResource("6_2uuem")
+
+[node name="TextureRect" type="ColorRect" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 246.0
+offset_right = 1356.0
+offset_bottom = 508.0
+color = Color(0.941176, 0.933333, 0.905882, 1)
+
+[node name="Controls" type="Label" parent="InstructionsBackground"]
+layout_mode = 0
+offset_left = 213.333
+offset_top = 309.999
+offset_right = 1367.33
+offset_bottom = 522.999
+theme_override_colors/font_color = Color(0.847059, 0.305882, 0.392157, 0.529412)
+theme_override_fonts/font = SubResource("FontVariation_6plws")
+theme_override_font_sizes/font_size = 110
+text = "Some surfaces might slow you down!"
