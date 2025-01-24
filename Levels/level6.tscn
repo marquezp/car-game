@@ -60,7 +60,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wywbi"]
-size = Vector2(282.5, 114)
+size = Vector2(306.25, 633.5)
 
 [sub_resource type="Curve2D" id="Curve2D_f01q8"]
 _data = {
@@ -113,7 +113,7 @@ flip_h = true
 script = ExtResource("7_70rfs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint/Stopper"]
-position = Vector2(-20, 90)
+position = Vector2(200, -175)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wywbi")
 
