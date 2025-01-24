@@ -79,12 +79,11 @@ mouse_filter = 2
 script = ExtResource("1_23bgj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 330.0
-offset_top = 171.0
-offset_right = 788.0
-offset_bottom = 253.0
+offset_left = 337.0
+offset_top = 29.0
+offset_right = 795.0
+offset_bottom = 111.0
 texture = ExtResource("2_c7kv6")
 
 [node name="LevelText" type="Label" parent="TextureRect"]

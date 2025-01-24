@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgjwylldd56ee"]
+[gd_scene load_steps=4 format=3 uid="uid://bgjwylldd56ee"]
 
 [ext_resource type="Texture2D" uid="uid://cc80au3fkuy5c" path="res://Assets/Environment/bedAsset.png" id="1_23vx1"]
 [ext_resource type="PackedScene" uid="uid://bun32233l0ftl" path="res://Environment/carpet.tscn" id="2_2ff8h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gouai"]
 size = Vector2(437, 37.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3wlj"]
-size = Vector2(306.25, 110)
 
 [node name="Bed" type="StaticBody2D"]
 
@@ -25,6 +22,5 @@ damping_factor = 0.92
 position = Vector2(0, 3.39996)
 shape = SubResource("RectangleShape2D_gouai")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(114.875, 57)
-shape = SubResource("RectangleShape2D_s3wlj")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(218, -15, 242, -5, 254, 2, 258, 5, 261, 8, 265, 13, 268, 18, 270, 22, 270, 27, 270, 34, 269, 42, 269, 112, 210, 110)

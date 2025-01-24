@@ -17,7 +17,6 @@ func fade_in():
 	# Extract level number from path
 	var level_number = current_scene_path.split("level")[1].split(".")[0]
 	level_text.text = level_number
-	print("fading in")
 
 func fade_out():
 	animation_player.play("fade_out")

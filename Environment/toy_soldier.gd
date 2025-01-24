@@ -13,7 +13,6 @@ func _ready() -> void:
 	
 func on_collision(body):
 	if body.name == "Car":
-		print("Pushing back")
 		body.linear_velocity.x -= 800
 	
 func _physics_process(delta: float) -> void:

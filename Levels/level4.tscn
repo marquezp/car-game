@@ -11,7 +11,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_06vw8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 528, 573, 0, 0, 0, 0, 771, 485)
+"points": PackedVector2Array(0, 0, 0, 0, 912, 451, 0, 0, 0, 0, 648, 550)
 }
 point_count = 2
 
@@ -25,15 +25,7 @@ position = Vector2(68, 21)
 position = Vector2(-66, -24)
 
 [node name="Flag" parent="." instance=ExtResource("3_fos6k")]
-position = Vector2(755, 497)
-
-[node name="Chair" parent="." instance=ExtResource("5_3vigr")]
-position = Vector2(961, 458)
-scale = Vector2(0.7, 0.7)
-
-[node name="BookStack" parent="Chair" instance=ExtResource("6_4u2co")]
-position = Vector2(-7.14277, -18.5714)
-scale = Vector2(5, 5)
+position = Vector2(749, 497)
 
 [node name="Car" parent="." instance=ExtResource("2_x0dsf")]
 position = Vector2(82, 528)
@@ -43,13 +35,22 @@ position = Vector2(-9, 32)
 curve = SubResource("Curve2D_06vw8")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Patrol"]
-position = Vector2(528, 573)
+position = Vector2(912, 451)
+scale = Vector2(-1, 1)
 rotates = false
 cubic_interp = false
 loop = false
 
 [node name="ToySoldier" parent="Patrol/PathFollow2D" instance=ExtResource("4_32pwm")]
 scale = Vector2(4, 4)
+
+[node name="Chair" parent="." instance=ExtResource("5_3vigr")]
+position = Vector2(961, 458)
+scale = Vector2(0.7, 0.7)
+
+[node name="BookStack" parent="Chair" instance=ExtResource("6_4u2co")]
+position = Vector2(-7.14277, -18.5714)
+scale = Vector2(5, 5)
 
 [node name="InstructionsBackground" type="TextureRect" parent="."]
 offset_left = 305.0

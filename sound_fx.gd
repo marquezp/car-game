@@ -16,6 +16,9 @@ func game_theme():
 		$GameTheme.stop()
 
 func main_menu_theme():
+	if $GameTheme.playing:
+		$GameTheme.stop()
+		
 	if !$MainMenuTheme.playing:
 		$MainMenuTheme.play()
 	

@@ -65,7 +65,6 @@ func on_credits_pressed():
 # LEVEL SELECT BUTTONS
 # Goes through the levels directory and gets all the levels
 func get_levels(path):
-	print(path)
 	var dir = DirAccess.open(path)
 	if dir:
 		dir.list_dir_begin()

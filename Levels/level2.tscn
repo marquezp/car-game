@@ -18,7 +18,7 @@ position = Vector2(68, 23)
 position = Vector2(-67, -20)
 
 [node name="Flag" parent="." instance=ExtResource("3_682ff")]
-position = Vector2(916, 522)
+position = Vector2(929, 507)
 
 [node name="Carpet" parent="." instance=ExtResource("4_xxqeh")]
 position = Vector2(532.8, 574.2)
@@ -30,13 +30,13 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_v3w5n")
 
 [node name="Car" parent="." instance=ExtResource("2_ocbo8")]
-position = Vector2(107, 530)
+position = Vector2(53, 533)
 
 [node name="InstructionsBackground" type="TextureRect" parent="."]
-offset_left = 305.0
-offset_top = 246.0
-offset_right = 1860.0
-offset_bottom = 948.0
+offset_left = 311.0
+offset_top = 221.0
+offset_right = 1866.0
+offset_bottom = 923.0
 scale = Vector2(0.300001, 0.300001)
 texture = ExtResource("6_2uuem")
 

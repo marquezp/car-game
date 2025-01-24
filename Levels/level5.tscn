@@ -28,7 +28,7 @@ position = Vector2(68, 25)
 position = Vector2(-65, -26)
 
 [node name="Flag" parent="." instance=ExtResource("3_6g6qd")]
-position = Vector2(951, 522)
+position = Vector2(951, 501)
 
 [node name="Bed" parent="." instance=ExtResource("3_nhv2x")]
 position = Vector2(258, 446)
@@ -129,10 +129,10 @@ loop = false
 scale = Vector2(4, 4)
 
 [node name="InstructionsBackground" type="TextureRect" parent="."]
-offset_left = 136.0
-offset_top = 14.0
-offset_right = 1691.0
-offset_bottom = 716.0
+offset_left = 564.0
+offset_top = 152.0
+offset_right = 2119.0
+offset_bottom = 854.0
 scale = Vector2(0.260001, 0.260001)
 texture = ExtResource("7_a7q4y")
 

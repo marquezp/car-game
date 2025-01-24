@@ -1,11 +1,66 @@
-[gd_scene load_steps=9 format=3 uid="uid://dttqvg7ic4up6"]
+[gd_scene load_steps=19 format=3 uid="uid://dttqvg7ic4up6"]
 
 [ext_resource type="PackedScene" uid="uid://cusdvax13dgwc" path="res://Environment/level_template.tscn" id="1_wlatf"]
 [ext_resource type="PackedScene" uid="uid://cv70fssniyws5" path="res://Car/car.tscn" id="2_fxytt"]
 [ext_resource type="PackedScene" uid="uid://dqk6ncb0jc4y3" path="res://Environment/flag.tscn" id="3_w24oi"]
 [ext_resource type="PackedScene" uid="uid://cn427b68t443r" path="res://Environment/chair.tscn" id="4_ilm2m"]
+[ext_resource type="Texture2D" uid="uid://carcs64cso5np" path="res://Assets/startFlags.png" id="5_6xvnp"]
 [ext_resource type="Texture2D" uid="uid://dly5xqegjl77o" path="res://Assets/Environment/bookStacks.png" id="5_cywpa"]
 [ext_resource type="PackedScene" uid="uid://cpxrcesv2rsft" path="res://Environment/toy_soldier.tscn" id="6_dr4lq"]
+[ext_resource type="Script" path="res://Car/stopper.gd" id="7_70rfs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v711w"]
+atlas = ExtResource("5_6xvnp")
+region = Rect2(0, 0, 280, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyco2"]
+atlas = ExtResource("5_6xvnp")
+region = Rect2(280, 0, 280, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0r8x"]
+atlas = ExtResource("5_6xvnp")
+region = Rect2(560, 0, 280, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wba7x"]
+atlas = ExtResource("5_6xvnp")
+region = Rect2(840, 0, 280, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0etwv"]
+atlas = ExtResource("5_6xvnp")
+region = Rect2(1120, 0, 280, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0j0d"]
+atlas = ExtResource("5_6xvnp")
+region = Rect2(1400, 0, 280, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35im0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v711w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyco2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0r8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wba7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0etwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0j0d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wywbi"]
+size = Vector2(282.5, 114)
 
 [sub_resource type="Curve2D" id="Curve2D_f01q8"]
 _data = {
@@ -19,14 +74,14 @@ _data = {
 }
 point_count = 2
 
-[node name="Level1" type="Node2D"]
+[node name="Level6" type="Node2D"]
 position = Vector2(68, 25)
 
 [node name="LevelTemplate" parent="." instance=ExtResource("1_wlatf")]
 position = Vector2(-65, -26)
 
 [node name="Flag" parent="." instance=ExtResource("3_w24oi")]
-position = Vector2(957, 523)
+position = Vector2(953, 503)
 
 [node name="Ramp" type="StaticBody2D" parent="."]
 position = Vector2(-64, 157)
@@ -44,8 +99,23 @@ scale = Vector2(0.973772, 1.22267)
 polygon = PackedVector2Array(485.74, 388.495, 307.053, 467.012, 658.265, 467.012)
 
 [node name="Chair" parent="." instance=ExtResource("4_ilm2m")]
-position = Vector2(393, 443)
+position = Vector2(393, 449)
 scale = Vector2(0.7, 0.7)
+
+[node name="Checkpoint" type="AnimatedSprite2D" parent="."]
+position = Vector2(396, 427)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_35im0")
+autoplay = "default"
+flip_h = true
+
+[node name="Stopper" type="Area2D" parent="Checkpoint"]
+script = ExtResource("7_70rfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint/Stopper"]
+position = Vector2(-20, 90)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_wywbi")
 
 [node name="Car" parent="." instance=ExtResource("2_fxytt")]
 position = Vector2(4, 526)

@@ -17,14 +17,12 @@ func pause():
 	animation_player.play("blur")
 	self.visible = true
 	get_tree().paused = true
-	print("pausing")
 	SoundFx.pausing()
 	
 func resume():
 	animation_player.play_backwards("blur")
 	self.visible = false
 	get_tree().paused = false
-	print("unpausing")
 	SoundFx.unpausing()
 	
 # Button Connections

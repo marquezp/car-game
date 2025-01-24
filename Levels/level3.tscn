@@ -42,10 +42,10 @@ polygon = PackedVector2Array(485.74, 388.495, 307.053, 467.012, 658.265, 467.012
 position = Vector2(177, 530)
 
 [node name="InstructionsBackground" type="TextureRect" parent="."]
-offset_left = 138.0
-offset_top = -61.0
-offset_right = 1693.0
-offset_bottom = 641.0
+offset_left = 174.0
+offset_top = 97.0
+offset_right = 1729.0
+offset_bottom = 799.0
 scale = Vector2(0.459999, 0.459999)
 texture = ExtResource("6_ko78x")
 

@@ -116,30 +116,6 @@ softness = 1.0
 
 [node name="Wheel" parent="WheelHolder2" instance=ExtResource("3_hla4v")]
 
-[node name="MovingLabel" type="Label" parent="."]
-visible = false
-offset_left = -26.0
-offset_top = -75.0
-offset_right = 26.0
-offset_bottom = -52.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-
-[node name="ChargeUp" type="Label" parent="."]
-visible = false
-offset_left = -25.0
-offset_top = -58.0
-offset_right = 27.0
-offset_bottom = -35.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-
-[node name="ChargesUsed" type="Label" parent="."]
-visible = false
-offset_left = -27.0
-offset_top = -39.0
-offset_right = 25.0
-offset_bottom = -16.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-
 [node name="ClickBox" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="ClickBox"]

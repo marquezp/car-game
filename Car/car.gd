@@ -3,13 +3,7 @@ extends RigidBody2D
 @onready var click_box: Area2D = $ClickBox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-# Debug Labels
-@onready var moving_label: Label = $MovingLabel
-@onready var charge_up: Label = $ChargeUp
-@onready var charges_used: Label = $ChargesUsed
-
-
-const STOP_THRESHOLD = 34.1
+const STOP_THRESHOLD = 35.0
 const STOP_FORCE = 0.85
 # TODO mess around with these 2 variables when playtesting
 @export var max_charge: int = 100
@@ -27,9 +21,7 @@ func _ready():
 	# add the wheels to an array
 	wheels = get_tree().get_nodes_in_group("wheel")
 	# unfreeze car + wheels
-	for wheel in wheels:
-		wheel.freeze = false
-	self.freeze = false
+	unfreeze()
 
 func start_slowing_down(rate):
 	damping_factor = rate
@@ -40,7 +32,6 @@ func stop_slowing_down():
 	
 # Apply the charge generated as torque on the wheels
 func move_car(charge):
-	print("moving car")
 	for wheel in wheels:
 		wheel.apply_torque_impulse(charge * car_speed)
 	
@@ -63,6 +54,11 @@ func freeze_car() -> void:
 		wheel.freeze = true
 	self.freeze = true
 
+func unfreeze() -> void:
+	for wheel in wheels:
+		wheel.freeze = false
+	self.freeze = false
+	
 # This function handles global inputs
 func _input(event):
 	if SceneManager.is_input_enabled(): # make sure we're accepting player input
@@ -105,11 +101,5 @@ func _physics_process(delta: float) -> void:
 			
 	# Check for carpet, post_launch check is to get the car past the STOP_THRESHOLD
 	if post_launch and is_slowing_down:
-		print(car.linear_velocity.x)
 		for wheel in wheels:
 			wheel.angular_velocity *= damping_factor
-			
-	# Display debug info
-	moving_label.text = "Moving: " + str(is_car_moving)
-	charge_up.text = "Charge: " + str(int(current_charge))
-	charges_used.text = "Charges Used: " + str(GameData.get_charges_used())
