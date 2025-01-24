@@ -14,12 +14,16 @@ config/name="car-game"
 run/main_scene="res://UI/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 
+[audio]
+
+buses/default_bus_layout="res://Audio/default_bus_layout.tres"
+
 [autoload]
 
 GameData="*res://Car/game_data.tscn"
-TransitionScreen="*res://UI/transition_screen.tscn"
-SceneManager="*res://scene_manager.tscn"
-SoundFx="*res://sound_fx.tscn"
+TransitionScreen="*res://Autoloads/transition_screen.tscn"
+SceneManager="*res://Autoloads/scene_manager.tscn"
+SoundFx="*res://Autoloads/sound_fx.tscn"
 
 [display]
 
